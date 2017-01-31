@@ -9,10 +9,14 @@ import { SetupRequest } from '../../../models/setup-request';
 })
 export class SetupRequestCardComponent implements OnInit {
   @Input() setupRequest: SetupRequest;
+  @Input() parentComponent: Component;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  showDetail() {
+    alert('Detail for ' + this.setupRequest.cusip);
+  }
 }
