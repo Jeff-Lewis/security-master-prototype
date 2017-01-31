@@ -22,10 +22,14 @@ export class WorkInProgressComponent implements OnInit {
     this.loadWorkQueueGroups();
   }
 
-  private loadWorkQueueGroups() {
+  loadWorkQueueGroups() {
     this.workQueueGroupService.getWorkQueueGroups().then(workQueueGroups => {
-      this.selectedWorkQueueGroup = workQueueGroups[0];
       this.workQueueGroups = workQueueGroups
+      this.setSelectedWorkQueueGroup(workQueueGroups[0]);      
     });
+  }
+
+  setSelectedWorkQueueGroup(workQueueGroup): void {
+    this.selectedWorkQueueGroup = workQueueGroup;
   }
 }

@@ -7,7 +7,7 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="workGroupMenu">
       <li *ngFor="let workQueueGroup of workQueueGroups">
-        <a>{{workQueueGroup.name}}</a>     
+        <a (click)="setSelectedWorkQueueGroup(workQueueGroup)">{{workQueueGroup.name}}</a>     
       </li>
     </ul>
   </div>
