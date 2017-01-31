@@ -12,3 +12,12 @@
     </ul>
   </div>
 </div>
+
+<div *ngIf="selectedWorkQueueGroup">
+  <app-dashboard [metricMode]="selectedWorkQueueGroup.name"></app-dashboard>
+</div>
+
+<div *ngIf="setupRequests">
+  <app-setup-request-card *ngFor="let setupRequest of setupRequests" [setupRequest]="setupRequest">
+  </app-setup-request-card>
+</div>

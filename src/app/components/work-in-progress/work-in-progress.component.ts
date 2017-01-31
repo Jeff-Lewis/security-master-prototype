@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { WorkQueue } from '../../models/work-queue';
 import { WorkQueueGroup } from '../../models/work-queue-group';
+import { SetupRequest } from '../../models/setup-request';
 
+import { SetupRequestsService } from '../../services/setup-requests.service';
 import { WorkQueueGroupService } from '../../services/work-queue-group.service';
 
 @Component({
@@ -13,13 +15,22 @@ import { WorkQueueGroupService } from '../../services/work-queue-group.service';
 export class WorkInProgressComponent implements OnInit {
   workQueueGroups: WorkQueueGroup[];
   workQueues: WorkQueue[];
+  setupRequests: SetupRequest[];
 
   selectedWorkQueueGroup: WorkQueueGroup;
 
-  constructor(private workQueueGroupService: WorkQueueGroupService) { }
+  constructor(
+    private workQueueGroupService: WorkQueueGroupService,
+    private setupRequestsService: SetupRequestsService
+  ) { }
 
   ngOnInit() {
     this.loadWorkQueueGroups();
+    this.loadSetupRequests();
+  }
+
+  loadSetupRequests() {
+    this.setupRequestsService.getCurrentWorkInProgress().then(setupRequests => this.setupRequests = setupRequests);
   }
 
   loadWorkQueueGroups() {

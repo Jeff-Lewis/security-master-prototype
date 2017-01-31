@@ -12,7 +12,10 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 import { WorkInProgressComponent } from './components/work-in-progress/work-in-progress.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SetupRequestDetailComponent } from './components/setup-request/setup-request-detail/setup-request-detail.component';
+import { SetupRequestCardComponent } from './components/setup-request/setup-request-card/setup-request-card.component';
 
+import { SetupRequestsService } from './services/setup-requests.service'
 import { WorkQueueGroupService } from './services/work-queue-group.service';
 
 @NgModule({
@@ -27,10 +30,15 @@ import { WorkQueueGroupService } from './services/work-queue-group.service';
   declarations: [
     WorkInProgressComponent,
     MainLayoutComponent,
-    DashboardComponent    
+    DashboardComponent,
+    SetupRequestDetailComponent,
+    SetupRequestCardComponent    
   ],
   
-  providers: [WorkQueueGroupService],
+  providers: [
+    WorkQueueGroupService,
+    SetupRequestsService
+  ],
   bootstrap: [MainLayoutComponent]
 })
 export class AppModule { }
