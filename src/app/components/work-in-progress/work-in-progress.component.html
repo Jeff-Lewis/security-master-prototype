@@ -1,3 +1,14 @@
-<p>
-  work-in-progress works!
-</p>
+<div *ngIf="workQueueGroups">
+  <div class="dropdown">
+    <label>Current Work Group:</label>
+    <button class="btn btn-default dropdown-toggle" type="button" id="workGroupMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      {{selectedWorkQueueGroup.name}}
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="workGroupMenu">
+      <li *ngFor="let workQueueGroup of workQueueGroups">
+        <a>{{workQueueGroup.name}}</a>     
+      </li>
+    </ul>
+  </div>
+</div>
