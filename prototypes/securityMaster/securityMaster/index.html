@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CRC Security Master</title>
+
+  <link href="content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="content/style.css" rel="stylesheet" type="text/css" />
+  <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+  <!--begin navbar -->
+  <div>
+    <nav class="navbar navbar-inverse bg-faded">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Security Master</a>
+        </div>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search Cusip">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <!--end search -->
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" role="button">Settings <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li><a href="#">User</a></li>
+              <li><a href="#">System (admin only)</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!--end settings dropdown -->
+      </div>
+    </nav>
+  </div>
+  <!--end navbar -->
+  <div>
+    <div class="row" style="min-height:40px; padding-right: 10px;">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+      <div class="container-fluid" style="padding-right: 0px; padding-left: 19px;">
+        <div style="float: left;">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-danger">Security Type</button>
+            <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Corp</a></li>
+              <li><a href="#">Equity</a></li>
+              <li><a href="#">Muni</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--end security type button -->
+        <div style="float: right;">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-danger">Request Type</button>
+            <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Trade Related</a></li>
+              <li><a href="#">Unclassified</a></li>
+              <li><a href="#">Non-Trading</a></li>
+            </ul>
+          </div>
+          <!--end request type button -->
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 col-padding-left"></div>
+    <div class="col-md-1"></div>
+  </div>
+  </div>
+  <!--end options row -->
+  <div class="container-fluid">
+    <div class="row" style="min-height:200;">
+  <div class="col-sm-1"></div>
+  <div class="col-md-3">
+    <div class="panel panel-danger">
+      <div class="panel-heading"><b>Queue</b></div>
+      <div class="panel-body fixed-panel">
+        <section class="security-entry">
+          <h5>
+            <a href="#">XXXXXXXX8</a>
+            <span style="float: right;">Equity</span>
+          </h5>
+          <h6>Trade Related
+            <span style="float: right;">6:32</span>
+          </h6>
+        </section>
+        <!--end item1 -->
+        <section class="security-entry">
+          <h5>
+            <a href="#">XXXXXXXX5</a>
+            <span style="float: right;">Muni</span>
+          </h5>
+          <h6>Trade Related
+            <span style="float: right;">5:52</span>
+          </h6>
+        </section>
+        <!--end item2 -->
+        <section class="security-entry">
+          <h5>
+            <a href="#">XXXXXXX78</a>
+            <span style="float: right;">Muni</span>
+          </h5>
+          <h6>Unclassified
+            <span style="float: right;">5:49</span>
+          </h6>
+        </section>
+        <!--end item3 -->
+        <div class="security-entry">
+          <div class="row">
+            <div class="col-md-8">
+              <h5><a href="#">XXXXXXXX1</a>
+              </h5>
+            </div>
+            <div class "col-md-4">
+              <h6>Corp</h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <h5>Non-Trading</h5>
+            </div>
+            <div class "col-md-4">
+              <h6>12:03</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-info">
+      <div class="panel-heading"><b>Setting Up</b>
+        <div class="radio-inline inline">
+          <label>
+            <input type="radio" name="viewRadios" id="viewRadios1" value="option1" checked>
+            Mine
+          </label>
+        </div>
+        <div class="radio-inline inline">
+          <label>
+            <input type="radio" name="viewRadios" id="viewRadios2" value="option2">
+            All
+          </label>
+        </div>
+        <!--end view radios -->
+      </div>
+      <!--end setting up head -->
+      <div class="panel-body fixed-panel">
+        panel: Setting Up
+      </div>
+      <!--end setting up body -->
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><b>Done</b></div>
+      <div class="panel-body fixed-panel">
+        panel: Complete
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+  </div>
+</div>
+</body>
+</html>
