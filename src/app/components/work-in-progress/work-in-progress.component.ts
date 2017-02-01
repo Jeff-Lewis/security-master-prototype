@@ -6,6 +6,7 @@ import { SetupRequest } from '../../models/setup-request';
 
 import { SetupRequestsService } from '../../services/setup-requests.service';
 import { WorkQueueGroupService } from '../../services/work-queue-group.service';
+import { WorkInProgressService } from '../../services/work-in-progress.service';
 
 @Component({
   selector: 'app-work-in-progress',
@@ -21,12 +22,19 @@ export class WorkInProgressComponent implements OnInit {
 
   constructor(
     private workQueueGroupService: WorkQueueGroupService,
-    private setupRequestsService: SetupRequestsService
+    private setupRequestsService: SetupRequestsService,
+    private workInProgressService: WorkInProgressService
   ) { }
 
   ngOnInit() {
     this.loadWorkQueueGroups();
     this.loadSetupRequests();
+  }
+
+  addRequest(cusip: string) {
+    this.setupRequestsService.create(cusip).then((request) => {
+      this.setupRequests.push(request);
+    });
   }
 
   loadSetupRequests() {
@@ -37,6 +45,12 @@ export class WorkInProgressComponent implements OnInit {
     this.workQueueGroupService.getWorkQueueGroups().then(workQueueGroups => {
       this.workQueueGroups = workQueueGroups
       this.setSelectedWorkQueueGroup(workQueueGroups[0]);      
+    });
+  }
+
+  loadWorkInProgress() {
+    this.workInProgressService.getWorkInProgress().then(wip => {
+      this.setupRequests = wip.setupRequests;     
     });
   }
 

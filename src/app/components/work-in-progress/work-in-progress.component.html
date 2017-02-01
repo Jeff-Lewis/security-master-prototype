@@ -13,8 +13,11 @@
   </div>
 </div>
 
-<div *ngIf="selectedWorkQueueGroup">
-  <app-dashboard [metricMode]="selectedWorkQueueGroup.name"></app-dashboard>
+<div>
+  <label>Add Cusip:</label> <input #newSetupRequest placeholder="Cusip"/>
+  <button (click)="addRequest(newSetupRequest.value); newSetupRequest.value=''">
+    Add
+  </button>
 </div>
 
 <div *ngIf="setupRequests">

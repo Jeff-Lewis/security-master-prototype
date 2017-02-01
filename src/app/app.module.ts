@@ -17,6 +17,7 @@ import { SetupRequestCardComponent } from './components/setup-request/setup-requ
 
 import { SetupRequestsService } from './services/setup-requests.service'
 import { WorkQueueGroupService } from './services/work-queue-group.service';
+import { WorkInProgressService } from './services/work-in-progress.service';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { WorkQueueGroupService } from './services/work-queue-group.service';
   
   providers: [
     WorkQueueGroupService,
-    SetupRequestsService
+    SetupRequestsService,
+    WorkInProgressService
   ],
   bootstrap: [MainLayoutComponent]
 })

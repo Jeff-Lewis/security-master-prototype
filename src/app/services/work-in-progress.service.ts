@@ -7,21 +7,14 @@ import { SetupRequest } from '../models/setup-request';
 import { WorkInProgress } from '../models/work-in-progress';
 
 @Injectable()
-export class SetupRequestsService {
-  private apiUrl = 'api/setupRequests';
+export class WorkInProgressService {
+
+  private apiUrl = 'api/workInProgress';
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http:Http) { }
 
-  create(cusip: string): Promise<SetupRequest> {
-    return this.http
-      .post(this.apiUrl, JSON.stringify({cusip: cusip, workQueueId: 1}), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json().data)
-      .catch(this.handleError);
-  }
-
-  getCurrentWorkInProgress(): Promise<SetupRequest[]> {
+  getWorkInProgress(): Promise<WorkInProgress> {
       return this.http.get(this.apiUrl)
                .toPromise()
                .then(response => response.json().data as SetupRequest[])
