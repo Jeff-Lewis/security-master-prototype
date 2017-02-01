@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { WorkQueue } from '../../models/work-queue';
-import { WorkQueueGroup } from '../../models/work-queue-group';
 import { SetupRequest } from '../../models/setup-request';
 
 import { SetupRequestsService } from '../../services/setup-requests.service';
@@ -12,12 +10,10 @@ import { WorkInProgressService } from '../../services/work-in-progress.service';
   templateUrl: './work-in-progress.component.html',
   styleUrls: ['./work-in-progress.component.css']
 })
-export class WorkInProgressComponent implements OnInit {
-  workQueueGroups: WorkQueueGroup[];
-  workQueues: WorkQueue[];
-  setupRequests: SetupRequest[];
 
-  selectedWorkQueueGroup: WorkQueueGroup;
+export class WorkInProgressComponent implements OnInit {  
+  setupRequests: SetupRequest[];
+  selectedSetupRequest: SetupRequest;
 
   constructor(    
     private setupRequestsService: SetupRequestsService,
@@ -34,18 +30,18 @@ export class WorkInProgressComponent implements OnInit {
     });
   }
 
+  closeSelectedSetupRequestDetail() {
+    this.selectedSetupRequest = null;
+  }
+
   loadWorkInProgress() {
     this.workInProgressService.getWorkInProgress().then(wip => {
       this.setupRequests = wip.setupRequests;     
     });
   }
 
-  setSelectedWorkQueueGroup(workQueueGroup): void {
-    this.selectedWorkQueueGroup = workQueueGroup;
-  }
-
   showSetupRequestDetail(setupRequest:SetupRequest) {
-    alert('Showing ' + setupRequest.cusip);
+    this.selectedSetupRequest = setupRequest;
   }
 
   updateSetupRequestStatus(setupRequest:SetupRequest) {

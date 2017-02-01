@@ -21,11 +21,12 @@ export class SetupRequestsService {
       .catch(this.handleError);
   }
 
-  getCurrentWorkInProgress(): Promise<SetupRequest[]> {
-      return this.http.get(this.apiUrl)
-               .toPromise()
-               .then(response => response.json().data as SetupRequest[])
-               .catch(this.handleError);
+  getSetupRequest(id:number): Promise<SetupRequest> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as SetupRequest)
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

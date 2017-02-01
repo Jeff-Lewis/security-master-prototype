@@ -1,3 +1,6 @@
-<p>
-  setup-request-detail works!
-</p>
+<div *ngIf="setupRequest">
+  <h1>
+    Showing Detail for: {{setupRequest.cusip}}
+  </h1>
+  <button (click)="close()">Close</button>
+</div>

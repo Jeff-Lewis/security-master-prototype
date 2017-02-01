@@ -1,3 +1,4 @@
+<!-- need to come back to this, disabling for now
 <div *ngIf="workQueueGroups">
   <div class="dropdown">
     <label>Current Work Group:</label>
@@ -12,6 +13,7 @@
     </ul>
   </div>
 </div>
+-->
 
 <div>
   <label>Add Cusip:</label> <input #newSetupRequest placeholder="Cusip"/>
@@ -26,4 +28,12 @@
     [setupRequest]="setupRequest"
     (onShowDetail)="showSetupRequestDetail($event)">
   </app-setup-request-card>
+</div>
+
+<div *ngIf="selectedSetupRequest">
+  <app-setup-request-detail
+    [setupRequestId] = "selectedSetupRequest.id"
+    (onClose) = "closeSelectedSetupRequestDetail()"
+  >
+  </app-setup-request-detail>
 </div>
