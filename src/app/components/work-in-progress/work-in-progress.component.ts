@@ -43,8 +43,4 @@ export class WorkInProgressComponent implements OnInit {
   showSetupRequestDetail(setupRequest:SetupRequest) {
     this.selectedSetupRequest = setupRequest;
   }
-
-  updateSetupRequestStatus(setupRequest:SetupRequest) {
-    alert('Updating ' + setupRequest.cusip);
-  }
 }
