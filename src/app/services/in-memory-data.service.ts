@@ -1,7 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    let workQueues = [
+    let setupRequestStatuses = [
       {id: 1, index: 1, name: 'Ready For Setup' },
       {id: 2, index: 2, name: 'Setup In Progress' },
       {id: 3, index: 3, name: 'Ready For QC' },
@@ -18,15 +18,21 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     let setupRequests = [
-      {id: 1, cusip: '123456TY9', workQueueId: 1, addedDate: new Date()},
-      {id: 2, cusip: '98766BH12', workQueueId: 1, addedDate: new Date()},
-      {id: 3, cusip: '72856YT78', workQueueId: 1, addedDate: new Date()}
+      {id: 1, cusip: '123456TY9', statusId: 1, addedDate: new Date()},
+      {id: 2, cusip: '98766BH12', statusId: 1, addedDate: new Date()},
+      {id: 3, cusip: '72856YT78', statusId: 1, addedDate: new Date()}
     ];
 
+    let workInProgress = {
+        statuses: setupRequestStatuses,
+        setupRequests: setupRequests
+    };
+
     return { 
-      workQueues,
+      setupRequestStatuses,
       workQueueGroups,
-      setupRequests
+      setupRequests,
+      workInProgress
     };
   }
 }
