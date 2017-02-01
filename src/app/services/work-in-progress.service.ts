@@ -17,7 +17,7 @@ export class WorkInProgressService {
   getWorkInProgress(): Promise<WorkInProgress> {
       return this.http.get(this.apiUrl)
                .toPromise()
-               .then(response => response.json().data as SetupRequest[])
+               .then(response => response.json().data as WorkInProgress)
                .catch(this.handleError);
   }
 

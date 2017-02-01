@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { SetupRequest } from '../../../models/setup-request';
 
@@ -9,14 +9,14 @@ import { SetupRequest } from '../../../models/setup-request';
 })
 export class SetupRequestCardComponent implements OnInit {
   @Input() setupRequest: SetupRequest;
-  @Input() parentComponent: Component;
-
+  @Output() onShowDetail = new EventEmitter<SetupRequest>();
+  
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
-  showDetail() {
-    alert('Detail for ' + this.setupRequest.cusip);
+  showDetail() {    
+    this.onShowDetail.emit(this.setupRequest);
   }
 }

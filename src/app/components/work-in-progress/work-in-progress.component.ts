@@ -5,7 +5,6 @@ import { WorkQueueGroup } from '../../models/work-queue-group';
 import { SetupRequest } from '../../models/setup-request';
 
 import { SetupRequestsService } from '../../services/setup-requests.service';
-import { WorkQueueGroupService } from '../../services/work-queue-group.service';
 import { WorkInProgressService } from '../../services/work-in-progress.service';
 
 @Component({
@@ -20,31 +19,18 @@ export class WorkInProgressComponent implements OnInit {
 
   selectedWorkQueueGroup: WorkQueueGroup;
 
-  constructor(
-    private workQueueGroupService: WorkQueueGroupService,
+  constructor(    
     private setupRequestsService: SetupRequestsService,
     private workInProgressService: WorkInProgressService
   ) { }
 
   ngOnInit() {
-    this.loadWorkQueueGroups();
-    this.loadSetupRequests();
+    this.loadWorkInProgress();
   }
 
   addRequest(cusip: string) {
     this.setupRequestsService.create(cusip).then((request) => {
       this.setupRequests.push(request);
-    });
-  }
-
-  loadSetupRequests() {
-    this.setupRequestsService.getCurrentWorkInProgress().then(setupRequests => this.setupRequests = setupRequests);
-  }
-
-  loadWorkQueueGroups() {
-    this.workQueueGroupService.getWorkQueueGroups().then(workQueueGroups => {
-      this.workQueueGroups = workQueueGroups
-      this.setSelectedWorkQueueGroup(workQueueGroups[0]);      
     });
   }
 
@@ -56,5 +42,13 @@ export class WorkInProgressComponent implements OnInit {
 
   setSelectedWorkQueueGroup(workQueueGroup): void {
     this.selectedWorkQueueGroup = workQueueGroup;
+  }
+
+  showSetupRequestDetail(setupRequest:SetupRequest) {
+    alert('Showing ' + setupRequest.cusip);
+  }
+
+  updateSetupRequestStatus(setupRequest:SetupRequest) {
+    alert('Updating ' + setupRequest.cusip);
   }
 }

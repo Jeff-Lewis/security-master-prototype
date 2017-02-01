@@ -21,6 +21,9 @@
 </div>
 
 <div *ngIf="setupRequests">
-  <app-setup-request-card *ngFor="let setupRequest of setupRequests" [setupRequest]="setupRequest">
+  <app-setup-request-card 
+    *ngFor="let setupRequest of setupRequests" 
+    [setupRequest]="setupRequest"
+    (onShowDetail)="showSetupRequestDetail($event)">
   </app-setup-request-card>
 </div>
