@@ -16,31 +16,31 @@ import { SetupRequestDetailComponent } from './components/setup-request/setup-re
 import { SetupRequestCardComponent } from './components/setup-request/setup-request-card/setup-request-card.component';
 
 import { SetupRequestsService } from './services/setup-requests.service'
-import { WorkQueueGroupService } from './services/work-queue-group.service';
 import { WorkInProgressService } from './services/work-in-progress.service';
 
 @NgModule({
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
   
   declarations: [
-    WorkInProgressComponent,
-    MainLayoutComponent,
     DashboardComponent,
+    MainLayoutComponent,
     SetupRequestDetailComponent,
-    SetupRequestCardComponent    
+    SetupRequestCardComponent,
+    WorkInProgressComponent,
   ],
   
   providers: [
-    WorkQueueGroupService,
     SetupRequestsService,
     WorkInProgressService
   ],
+  
   bootstrap: [MainLayoutComponent]
 })
+
 export class AppModule { }

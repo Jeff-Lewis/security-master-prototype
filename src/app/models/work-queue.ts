@@ -1,4 +1,11 @@
+import {SetupRequestStatus} from './setup-request-status';
+import {SetupRequest} from './setup-request';
+
 export class WorkQueue {
     id: number;
-    name: string;
+    currentStatus: SetupRequestStatus;
+    nextStatus: SetupRequestStatus;
+    previousStatus: SetupRequestStatus;
+
+    requests: SetupRequest[];
 }

@@ -1,7 +1,7 @@
 import {SetupRequest} from './setup-request'
-import {SetupRequestStatus} from './setup-request-status'
+import {WorkQueue} from './work-queue'
 
 export class WorkInProgress {
-    setupRequests: SetupRequest[];
-    statuses: SetupRequestStatus[];
+    queues: WorkQueue[];
+    setupRequests: SetupRequest[];    
 }

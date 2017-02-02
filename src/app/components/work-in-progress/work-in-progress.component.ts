@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SetupRequest } from '../../models/setup-request';
+import { WorkQueue } from '../../models/work-queue';
 
 import { SetupRequestsService } from '../../services/setup-requests.service';
 import { WorkInProgressService } from '../../services/work-in-progress.service';
@@ -11,7 +12,8 @@ import { WorkInProgressService } from '../../services/work-in-progress.service';
   styleUrls: ['./work-in-progress.component.css']
 })
 
-export class WorkInProgressComponent implements OnInit {  
+export class WorkInProgressComponent implements OnInit { 
+  queues: WorkQueue[]; 
   setupRequests: SetupRequest[];
   selectedSetupRequest: SetupRequest;
 

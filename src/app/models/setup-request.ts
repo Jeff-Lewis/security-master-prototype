@@ -1,6 +1,6 @@
 export class SetupRequest {
     id: number;
     cusip: string;
-    workQueueId: number;
+    statusId: number;
     addedDate: Date;
 }
