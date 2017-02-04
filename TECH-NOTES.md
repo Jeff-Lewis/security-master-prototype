@@ -29,7 +29,7 @@
     *   include params for things like styles, etc.
 *   Refactor out Cusip.productType to complex object
     *   include params for things like styles, etc.    
-*   *Refactor HTTP API access to it's own class (jake)*
+*   ~~*Refactor HTTP API access to it's own class (jake)*~~
 
 *   Design error handling strategy
 *   Design "not found cusip detail" strategy
