@@ -11,36 +11,31 @@
 <body>
     <div class="container">
         <div class="panel panel-primary">
-            <div class="panel-heading">Activity</div>
             <div class="panel-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label for="newNote" class="col-md-2 control-label">New Note</label>
+                        <label for="newComment" class="col-md-1 control-label">Comment</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" id="newNote">
+                            <input type="text" class="form-control" id="newComment">
                         </div>
-                        <div class="col-md-2">
-                            <button type="submit" class="btn btn-primary">Submit Note</button>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
                         </div>
                     </div>                    
                 </form>
             </div>
-            <table class="table table-striped">
-                <tr class="active">
-                    <th class="text-center">Activity</th>
-                    <th class="text-center">Added</th>
-                </tr>
+            <table class="table table-condensed" style="color: darkblue;">
                 <tr>
+                    <td style="width:17%;">MM-DD-YYYY HH:MM:SS</td>
                     <td>Verifying Yield</td>
-                    <td class="text-center">HH:MM:SS</td>
                 </tr>
                 <tr>
+                    <td>MM-DD-YYYY HH:MM:SS</td>
                     <td>Assigned to A123456</td>
-                    <td class="text-center">HH:MM:SS</td>
                 </tr>
                 <tr>
+                    <td>MM-DD-YYYY HH:MM:SS</td>
                     <td>Imported from Request ID XXXX-MM-DD</td>
-                    <td class="text-center">HH:MM:SS</td>
                 </tr>
             </table>
         </div>
