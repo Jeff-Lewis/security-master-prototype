@@ -23,11 +23,12 @@ export class CusipService {
 
   getCusips(): Promise<Cusip[]> {
     const url = `${this.apiUrl}`;
+    LogHelper.trace(`REQUEST: ${url}...`)
     return this.http.get(url)
       .toPromise()
       .then(response => {
         var jsonData = response.json().data;
-        LogHelper.trace(`getCusips API: ${JSON.stringify(jsonData)}`);
+        LogHelper.trace(`RESPONSE: ${url}: ${JSON.stringify(jsonData)}`);
         return jsonData as Cusip[];
       })
       .catch(this.handleError);
