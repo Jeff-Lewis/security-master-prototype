@@ -5,7 +5,6 @@ import 'rxjs/add/operator/toPromise';
 
 import { LogHelper } from '../helpers/log.helper';
 
-import { SetupRequest } from '../models/setup-request';
 import { WorkInProgress } from '../models/work-in-progress';
 
 @Injectable()

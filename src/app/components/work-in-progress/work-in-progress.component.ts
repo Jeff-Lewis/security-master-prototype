@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SetupRequest } from '../../models/setup-request';
 import { WorkQueue } from '../../models/work-queue';
 
 import { Cusip } from '../../models/cusip-models';
 
 import { CusipService } from '../../services/cusip.service';
-import { SetupRequestsService } from '../../services/setup-requests.service';
 import { WorkInProgressService } from '../../services/work-in-progress.service';
 
 @Component({
@@ -17,25 +15,22 @@ import { WorkInProgressService } from '../../services/work-in-progress.service';
 
 export class WorkInProgressComponent implements OnInit { 
   queues: WorkQueue[]; 
-  setupRequests: SetupRequest[];
-  selectedSetupRequest: SetupRequest;
-
+  
   cusips: Cusip[];
   selectedCusip: Cusip;
 
   constructor(    
     private cusipService: CusipService,
-    private setupRequestsService: SetupRequestsService,
-    private workInProgressService: WorkInProgressService
+        private workInProgressService: WorkInProgressService
   ) { }
 
   ngOnInit() {
     this.loadWorkInProgress();
   }
 
-  addRequest(cusip: string) {
-    this.setupRequestsService.create(cusip).then((request) => {
-      this.setupRequests.push(request);
+  addCusip(cusipName: string) {
+    this.cusipService.create(cusipName).then((cusip) => {
+      this.cusips.push(cusip);
     });
   }
 
@@ -49,15 +44,11 @@ export class WorkInProgressComponent implements OnInit {
     });
 
     this.workInProgressService.getWorkInProgress().then(wip => {
-      this.setupRequests = wip.setupRequests;     
+        
     });
   }
 
   showCusipDetail(cusip:Cusip) {
     this.selectedCusip = cusip;
-  }
-
-  showSetupRequestDetail(setupRequest:SetupRequest) {
-    this.selectedSetupRequest = setupRequest;
   }
 }

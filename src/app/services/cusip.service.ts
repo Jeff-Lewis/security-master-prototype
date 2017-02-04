@@ -13,6 +13,14 @@ export class CusipService {
 
   constructor(private http:Http) { }
 
+  create(cusipName: string): Promise<Cusip> {
+    return this.http
+      .post(this.apiUrl, JSON.stringify({name: cusipName, statusId: 1, addedDate: new Date()}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json().data)
+      .catch(this.handleError);
+  }
+
   getCusips(): Promise<Cusip[]> {
     const url = `${this.apiUrl}`;
     return this.http.get(url)
