@@ -19,7 +19,7 @@
 *   ~~*Define data model (jake)*~~
 *   ~~*Get list of cusips to show (jake)*~~
 *   ~~*Add cusip (jake)*~~
-*   *Add detail endpoint for cusips (jake)*
+*   ~~*Add detail endpoint for cusips (jake)*~~
 *   Move cusips between "transitions"
 *   Get cusips into "transition queues"
 *   Isolate "transition queues" into "work groups" (i.e. setup, QC,
