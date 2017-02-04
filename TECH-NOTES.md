@@ -10,6 +10,10 @@
 *   Get cusips into "transition queues"
 *   Isolate "transition queues" into "work groups" (i.e. setup, QC,
     and Audit)
+*   Refactor out Cusip.setupPriorityType to complex object
+    *   include params for things like styles, etc.
+*   Refactor out Cusip.productType to complex object
+    *   include params for things like styles, etc.
 
 ### Design ##########################################################
 
