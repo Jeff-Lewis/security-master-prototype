@@ -22,18 +22,18 @@
   </button>
 </div>
 
-<div *ngIf="setupRequests">
-  <app-setup-request-card 
-    *ngFor="let setupRequest of setupRequests" 
-    [setupRequest]="setupRequest"
-    (onShowDetail)="showSetupRequestDetail($event)">
-  </app-setup-request-card>
+<div *ngIf="cusips">
+  <app-cusip-card 
+    *ngFor="let cusip of cusips" 
+    [cusip]="cusip"
+    (onShowDetail)="showCusipDetail($event)">
+  </app-cusip-card>
 </div>
 
-<div *ngIf="selectedSetupRequest">
-  <app-setup-request-detail
-    [setupRequestId] = "selectedSetupRequest.id"
-    (onClose) = "closeSelectedSetupRequestDetail()"
+<div *ngIf="selectedCusip">
+  <app-cusip-detail
+    [cusipId] = "selectedCusip.id"
+    (onClose) = "closeSelectedCusipDetail()"
   >
-  </app-setup-request-detail>
+  </app-cusip-detail>
 </div>

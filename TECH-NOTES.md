@@ -13,3 +13,7 @@
 
 ### Design ##########################################################
 
+### Research ########################################################
+*   Make partials work: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html
+ 
+

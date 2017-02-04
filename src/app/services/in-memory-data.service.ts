@@ -3,6 +3,8 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import { LogHelper } from '../helpers/log.helper';
 
+import { Cusip } from '../models/cusip-models';
+
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     var now = Date.now.toString();
@@ -62,12 +64,26 @@ export class InMemoryDataService implements InMemoryDbService {
 
     let workInProgress = {
         groups: workQueueGroups,
-        setupRequests: setupRequests        
+        setupRequests: setupRequests             
     };
 
     return {             
       workInProgress,
-      setupRequests      
+      setupRequests,
+      cusips: this.getCusips()   
     };
+  }
+
+  private getCusips() : Cusip[] {
+    let output = [];
+
+    var cusipsToStartWith = ['123456TY9','98766BH12', '72856YT78'];
+
+    for (var i=0; i<cusipsToStartWith.length;i++) {
+      output.push(new Cusip(i+1, cusipsToStartWith[i]));
+    }   
+
+    LogHelper.trace(`in-mem getCusips: ${JSON.stringify(output)}`);
+    return output;
   }
 }
