@@ -19,16 +19,20 @@
 *   ~~*Define data model (jake)*~~
 *   ~~*Get list of cusips to show (jake)*~~
 *   ~~*Add cusip (jake)*~~
+*   *Add detail endpoint for cusips (jake)*
 *   Move cusips between "transitions"
 *   Get cusips into "transition queues"
 *   Isolate "transition queues" into "work groups" (i.e. setup, QC,
     and Audit)
+
 *   Refactor out Cusip.setupPriorityType to complex object
     *   include params for things like styles, etc.
 *   Refactor out Cusip.productType to complex object
     *   include params for things like styles, etc.    
 *   Refactor HTTP API access to it's own class
+
 *   Design error handling strategy
+*   Design "not found cusip detail" strategy
 
 ### Design ##########################################################
 

@@ -33,14 +33,26 @@ export class CusipService {
       .catch(this.handleError);
   }
 
-  getCusip(id:number): Promise<Cusip> {
+  getCusipById(id:number): Promise<Cusip> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => {
         var jsonData = response.json().data;
-        LogHelper.trace(`getCusip API: ${JSON.stringify(jsonData)}`);
+        LogHelper.trace(`getCusipById API: ${JSON.stringify(jsonData)}`);
         return jsonData as Cusip;
+      })
+      .catch(this.handleError);
+  }
+
+  getCusipByName(name:string): Promise<Cusip> {
+    const url = `${this.apiUrl}?name=${name}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => {
+        var jsonData = response.json().data;
+        LogHelper.trace(`getCusipByName API: ${JSON.stringify(jsonData)}`);
+        return jsonData[0] as Cusip;
       })
       .catch(this.handleError);
   }

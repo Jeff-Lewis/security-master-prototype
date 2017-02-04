@@ -1,6 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+
+import 'rxjs/add/operator/switchMap';
 
 import { Cusip } from '../../../models/cusip-models';
+
+import { LogHelper } from '../../../helpers/log.helper';
 
 import { CusipService } from '../../../services/cusip.service';
 
@@ -16,10 +21,25 @@ export class CusipDetailComponent implements OnInit {
 
   cusip: Cusip;
 
-  constructor(private cusipService: CusipService) { }
+  constructor(
+    private cusipService: CusipService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loadCusip();
+    this.route.params
+      .switchMap((params: Params) =>  {
+        var cusipName = params['cusip'];
+        if (cusipName == undefined || cusipName == null) return new Promise<Cusip>(null);
+        return this.cusipService.getCusipByName(cusipName);
+      })
+      .subscribe(cusip => {
+        if (cusip == null) return;
+        this.cusipId = cusip.id;         
+        this.cusip = cusip;        
+      });
+
+    if (this.cusipId)
+      this.loadCusip();
   }
 
   ngOnChanges() {
@@ -30,7 +50,7 @@ export class CusipDetailComponent implements OnInit {
     this.onClose.emit();
   }
 
-  loadCusip() {
-    this.cusipService.getCusip(this.cusipId).then((cusip) => this.cusip = cusip);
+  loadCusip() {    
+    this.cusipService.getCusipById(this.cusipId).then((cusip) => this.cusip = cusip);
   }
 }

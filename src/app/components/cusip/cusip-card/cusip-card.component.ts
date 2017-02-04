@@ -21,7 +21,6 @@ export class CusipCardComponent implements OnInit {
 
   getAddedDateString(): string {
     // see: https://momentjs.com/
-    LogHelper.trace(`getAddedDateString for ${JSON.stringify(this.cusip)}`);
     return moment(this.cusip.addedDate).format('h:mm:ss a');
   }
 
