@@ -53,12 +53,11 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 3, name: 'Audit', queues: [q[5], q[6], q[7]]}
     ];
 
-    let setupRequests = [
-      {id: 1, cusip: '123456TY9', statusId: 1, addedDate: new Date()},
-      {id: 2, cusip: '98766BH12', statusId: 1, addedDate: new Date()},
-      {id: 3, cusip: '72856YT78', statusId: 1, addedDate: new Date()}
-    ];
-
+    var cusipsToStartWith = ['123456TY9','98766BH12', '72856YT78'];
+    let setupRequests = [];
+    for (var i=0; i<cusipsToStartWith.length;i++) {
+      setupRequests.push({id: i+1, cusip: cusipsToStartWith[i], statusId: 1, addedDate: new Date()});
+    }
     LogHelper.trace(`Checking in-mem setupRequests - ${JSON.stringify(setupRequests)}`);
 
     let workInProgress = {
