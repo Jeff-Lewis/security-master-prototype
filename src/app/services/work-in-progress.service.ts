@@ -1,34 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-
-import 'rxjs/add/operator/toPromise';
 
 import { LogHelper } from '../helpers/log.helper';
-
 import { WorkInProgress } from '../models/work-in-progress';
+import { HttpApiService } from '../services/http-api.service';
 
 @Injectable()
 export class WorkInProgressService {
 
   private apiUrl = 'api/workInProgress';
-  private headers = new Headers({'Content-Type': 'application/json'});
 
-  constructor(private http:Http) { }
+  constructor(private httpApi:HttpApiService) { }
 
   getWorkInProgress(): Promise<WorkInProgress> {
-      return this.http.get(this.apiUrl)
-               .toPromise()
-               .then(response => {
-                 var jsonData = response.json().data;
-                 LogHelper.trace(`getWorkInProgress - ${JSON.stringify(jsonData)}`);
-                 return jsonData as WorkInProgress;
-               })
-               .catch(this.handleError);
+      return this.httpApi.getSingle<WorkInProgress>(this.apiUrl);
   }
-
-  private handleError(error: any): Promise<any> {
-    // need to come up w/ a better error handler
-    LogHelper.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  }  
 }

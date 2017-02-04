@@ -16,6 +16,7 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { CusipService } from './services/cusip.service';
+import { HttpApiService } from './services/http-api.service';
 import { WorkInProgressService } from './services/work-in-progress.service';
 
 @NgModule({
@@ -37,6 +38,7 @@ import { WorkInProgressService } from './services/work-in-progress.service';
   
   providers: [
     CusipService,
+    HttpApiService,
     WorkInProgressService
   ],
   

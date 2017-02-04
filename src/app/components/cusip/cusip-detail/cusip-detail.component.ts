@@ -4,9 +4,7 @@ import { ActivatedRoute, Params }   from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 import { Cusip } from '../../../models/cusip-models';
-
 import { LogHelper } from '../../../helpers/log.helper';
-
 import { CusipService } from '../../../services/cusip.service';
 
 @Component({
@@ -34,12 +32,8 @@ export class CusipDetailComponent implements OnInit {
       })
       .subscribe(cusip => {
         if (cusip == null) return;
-        this.cusipId = cusip.id;         
-        this.cusip = cusip;        
+        this.cusip = cusip;                
       });
-
-    if (this.cusipId)
-      this.loadCusip();
   }
 
   ngOnChanges() {
