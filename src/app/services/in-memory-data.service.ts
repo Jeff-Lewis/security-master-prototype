@@ -1,6 +1,12 @@
+import {Component} from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+
+import { LogHelper } from '../helpers/log.helper';
+
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
+    var now = Date.now.toString();
+
     let setupRequestStatuses = [
       {id: 1, name: 'Ready For Setup' },
       {id: 2, name: 'Needs Rework' },
@@ -48,10 +54,12 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     let setupRequests = [
-      {id: 1, cusip: '123456TY9', statusId: 1, addedDate: new Date()},
-      {id: 2, cusip: '98766BH12', statusId: 1, addedDate: new Date()},
-      {id: 3, cusip: '72856YT78', statusId: 1, addedDate: new Date()}
+      {id: 1, cusip: '123456TY9', statusId: 1, addedDate: new Date(), boo: 'test'},
+      {id: 2, cusip: '98766BH12', statusId: 1, addedDate: new Date(), boo: 'test'},
+      {id: 3, cusip: '72856YT78', statusId: 1, addedDate: new Date(), boo: 'test'}
     ];
+
+    LogHelper.trace(`Checking in-mem setupRequests - ${JSON.stringify(setupRequests)}`);
 
     let workInProgress = {
         groups: workQueueGroups,

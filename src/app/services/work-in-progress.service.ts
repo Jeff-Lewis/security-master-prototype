@@ -3,6 +3,8 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
+import { LogHelper } from '../helpers/log.helper';
+
 import { SetupRequest } from '../models/setup-request';
 import { WorkInProgress } from '../models/work-in-progress';
 
@@ -17,7 +19,11 @@ export class WorkInProgressService {
   getWorkInProgress(): Promise<WorkInProgress> {
       return this.http.get(this.apiUrl)
                .toPromise()
-               .then(response => response.json().data as WorkInProgress)
+               .then(response => {
+                 var jsonData = response.json().data;
+                 LogHelper.trace(`getWorkInProgress - ${JSON.stringify(jsonData)}`);
+                 return jsonData as WorkInProgress;
+               })
                .catch(this.handleError);
   }
 

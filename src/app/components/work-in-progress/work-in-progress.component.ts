@@ -36,7 +36,7 @@ export class WorkInProgressComponent implements OnInit {
     this.selectedSetupRequest = null;
   }
 
-  loadWorkInProgress() {
+  loadWorkInProgress() {    
     this.workInProgressService.getWorkInProgress().then(wip => {
       this.setupRequests = wip.setupRequests;     
     });

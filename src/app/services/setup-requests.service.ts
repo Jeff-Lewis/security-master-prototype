@@ -3,6 +3,8 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
+import { LogHelper } from '../helpers/log.helper';
+
 import { SetupRequest } from '../models/setup-request';
 import { WorkInProgress } from '../models/work-in-progress';
 
@@ -15,7 +17,7 @@ export class SetupRequestsService {
 
   create(cusip: string): Promise<SetupRequest> {
     return this.http
-      .post(this.apiUrl, JSON.stringify({cusip: cusip, workQueueId: 1}), {headers: this.headers})
+      .post(this.apiUrl, JSON.stringify({cusip: cusip, statusId: 1, addedDate: new Date()}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);
@@ -25,7 +27,11 @@ export class SetupRequestsService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as SetupRequest)
+      .then(response => {
+        var jsonData = response.json().data;
+        LogHelper.trace(`getSetupRequest: ${JSON.stringify(jsonData)}`);
+        return jsonData as SetupRequest;
+      })
       .catch(this.handleError);
   }
 
