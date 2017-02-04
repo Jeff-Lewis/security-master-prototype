@@ -47,7 +47,7 @@ export class CusipService {
 
   private handleError(error: any): Promise<any> {
     // need to come up w/ a better error handler
-    console.error('An error occurred', error); // for demo purposes only
+    LogHelper.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }  
 }

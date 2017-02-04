@@ -1,5 +1,18 @@
 #   Technical Notes #################################################
 
+## Standards ########################################################
+*   JS class should be proper case
+*   JS file names and folders should be hyphen seperated
+*   Aim to use short, concise names, when possible
+*   App folders:
+    *   **components**: Angular components
+    *   **helpers**: static utility functions
+    *   **models**: data models that represent how the client-side expects
+        to receive server-side data
+    *   **services**: Angular services
+*   Use LogHelper extensively for tracing (we can turn off in PROD)
+
+
 ##  TODO: St. Louis Demo on 2/15/17 #################################
 
 ### UX ##############################################################
@@ -13,7 +26,9 @@
 *   Refactor out Cusip.setupPriorityType to complex object
     *   include params for things like styles, etc.
 *   Refactor out Cusip.productType to complex object
-    *   include params for things like styles, etc.
+    *   include params for things like styles, etc.    
+*   Refactor HTTP API access to it's own class
+*   Design error handling strategy
 
 ### Design ##########################################################
 
