@@ -9,6 +9,9 @@
     *   **helpers**: static utility functions
     *   **models**: data models that represent how the client-side expects
         to receive server-side data
+        *   Models should always have a parameterless constructor
+        *   Use a static "create" method in the place of a constructor
+            with parameters
     *   **services**: Angular services
 *   Use LogHelper extensively for tracing (we can turn off in PROD)
 
@@ -21,6 +24,7 @@
 *   ~~*Add cusip (jake)*~~
 *   ~~*Add detail endpoint for cusips (jake)*~~
 *   *Move cusips between "transitions" (jake)*
+    * ~~Implement: http://stackoverflow.com/a/32169241~~
 *   Get cusips into "transition queues"
 *   Isolate "transition queues" into "work groups" (i.e. setup, QC,
     and Audit)

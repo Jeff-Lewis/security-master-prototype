@@ -18,11 +18,11 @@ export class CusipDetailComponent implements OnInit {
   @Output() onClose = new EventEmitter();
 
   cusip: Cusip;
-  status: CusipSetupTransition;
 
   constructor(
     private cusipService: CusipService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.route.params
@@ -33,23 +33,24 @@ export class CusipDetailComponent implements OnInit {
       })
       .subscribe(cusip => {
         if (cusip == null) return;
-        this.cusip = cusip;    
-
-        let test = new Cusip(this.cusip.id, this.cusip.name, this.cusip.transitions) ;
-        this.status = test.getCurrentStatus();  
-        LogHelper.trace(`${JSON.stringify(status)}`);
+        this.setCusip(cusip);
       });
   }
 
   ngOnChanges() {
-    this.loadCusip();
+    this.cusipService.getCusipById(this.cusipId).then((cusip) => this.setCusip(cusip));
   }
 
   close() {
     this.onClose.emit();
   }
 
-  loadCusip() {    
-    this.cusipService.getCusipById(this.cusipId).then((cusip) => this.cusip = cusip);
+  getCurrentStatusText(): string {
+    // todo: law of detemer refactor
+    return this.cusip.getCurrentStatus().transition.name;
+  }
+
+  setCusip(cusip: Cusip) {
+    this.cusip = cusip;
   }
 }
