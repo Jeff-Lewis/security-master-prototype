@@ -1,6 +1,6 @@
 export class Activity {
     // SERVER DATA **************************************
     id: number;
-    addedDate: Date;
+    addedDate: Date = new Date();
     entry: string;
 }
