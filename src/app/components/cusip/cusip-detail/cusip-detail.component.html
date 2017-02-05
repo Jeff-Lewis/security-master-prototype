@@ -1,9 +1,6 @@
 <div *ngIf="cusip">
   <h1>
-    Showing Detail for: {{cusip.name}}
-    <span *ngIf="status">
-      - {{status.transition.name}}
-    </span>
+    Showing Detail for: {{cusip.name}} - {{getCurrentStatusText()}}    
   </h1>
   <button (click)="close()">Close</button>
 </div>

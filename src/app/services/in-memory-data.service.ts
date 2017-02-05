@@ -32,7 +32,9 @@ export class InMemoryDataService implements InMemoryDbService {
       let tempId = i + 1;
       let readyForSetup = CusipSetupTransition.create(tempId, new Date(), transitions[0]);
       output.push(Cusip.create(tempId, cusipsToStartWith[i], [readyForSetup]));
-    }   
+    }  
+
+    output[0].transitions.push(CusipSetupTransition.create(900, new Date(), transitions[1])) ;
 
     LogHelper.trace(`in-mem getCusips: ${JSON.stringify(output)}`);
     return output;

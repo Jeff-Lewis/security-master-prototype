@@ -18,7 +18,6 @@ export class CusipDetailComponent implements OnInit {
   @Output() onClose = new EventEmitter();
 
   cusip: Cusip;
-  status: CusipSetupTransition;
 
   constructor(
     private cusipService: CusipService,
@@ -34,20 +33,24 @@ export class CusipDetailComponent implements OnInit {
       })
       .subscribe(cusip => {
         if (cusip == null) return;
-        this.refreshCusipDisplay(cusip);
+        this.setCusip(cusip);
       });
   }
 
   ngOnChanges() {
-    this.cusipService.getCusipById(this.cusipId).then((cusip) => this.refreshCusipDisplay(cusip));
+    this.cusipService.getCusipById(this.cusipId).then((cusip) => this.setCusip(cusip));
   }
 
   close() {
     this.onClose.emit();
   }
 
-  refreshCusipDisplay(cusip: Cusip) {
+  getCurrentStatusText(): string {
+    // todo: law of detemer refactor
+    return this.cusip.getCurrentStatus().transition.name;
+  }
+
+  setCusip(cusip: Cusip) {
     this.cusip = cusip;
-    this.status = this.cusip.getCurrentStatus();
   }
 }
