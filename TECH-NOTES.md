@@ -41,7 +41,12 @@
     *   there's plenty more...
 
 ### Design ##########################################################
-
+* Cusip Details
+    * Add Entry details Rows 
+    * Style Cusip Identification Rows
+    * Add Timeline
+    * Add Images
+* Add Images to project
 ### Research ########################################################
 *   [Make partials work](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html)
  

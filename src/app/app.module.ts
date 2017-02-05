@@ -20,6 +20,7 @@ import { HttpApiService } from './services/http-api.service';
 import { WorkInProgressService } from './services/work-in-progress.service';
 import { ActivityComponent } from './components/activity/activity.component';
 import { EmailComponent } from './components/email/email.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { EmailComponent } from './components/email/email.component';
     CusipDetailComponent,
     ActivityComponent,
     EmailComponent,
+    TimelineComponent,
   ],
   
   providers: [

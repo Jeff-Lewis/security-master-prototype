@@ -1,6 +1,7 @@
 import { SetupTransition } from './setup-transition-models';
 import { Activity } from './activity';
 import { Email } from './email';
+import { Timeline } from './timeline';
 
 export class Cusip {
     // SERVER DATA **************************************

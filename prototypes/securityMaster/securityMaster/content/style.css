@@ -1,4 +1,4 @@
-body {
+/*body {
   background-color: rgb(245, 245, 245);
 }
 .panel {
@@ -30,18 +30,26 @@ div.inline {
   margin-left: 8px;
 }
 
-/* images */
+
 img {
   width: 26px;
   height: 26px;
+}*/
+
+div {
+  background-color: dodgerblue;
+}
+/* timeline 1 */
+.timeline-container {
+  height: 136px;
 }
 
-/* timeline 1 */
-div#timeline {
-  /*background-color: rgb(248, 187, 208); 
-  margin-top: 150px;*/
+.timeline {
+  /*background-color: rgb(248, 187, 208); */
+  /*margin-top: 150px;*/
   height: 20px;
-  width: 70%;
+  margin-top: 5%;
+  /*width: 70%;
   position: absolute;
   /*-webkit-box-shadow: inset -2px 1px 29px 5px rgba(207,116,146,0.75);
   -moz-box-shadow: inset -2px 1px 29px 5px rgba(207,116,146,0.75);
@@ -71,13 +79,11 @@ div.stage {
   transition : 0.3s ease-in-out;
   width: 80px;
   height: 80px;
-  border-radius: 50%;
   position: absolute;
-  top: -30px;
+  top: 10px;
   text-align: center;
-  cursor: pointer;
   border: 1px solid #d0cfcf;
-
+  border-radius: 50%;
   -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
   box-shadow: 2px 3px 8px 0 rgba(50, 50, 50, 0.5);
@@ -112,9 +118,9 @@ div:nth-child(7) {
   background-color: #fff;
 }
 
-/*#title1, #title2, #title3, #title4, #title5, #title6, #title7 {
+#title1, #title2, #title3, #title4, #title5, #title6, #title7 {
   margin-top: -20px;
-}*/
+}
 
 span {
   display: inline-block;
