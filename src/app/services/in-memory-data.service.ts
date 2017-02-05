@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
     let transitionWorkflows = this.getSetupTransitionWorkflows(transitions);
     
     let cusips = this.getCusips(transitions);
-    let workInProgress = new WorkInProgress(cusips, transitionWorkflows);
+    let workInProgress = WorkInProgress.create(cusips, transitionWorkflows);
 
     let apiEndpoints = {
       workInProgress,
@@ -30,8 +30,8 @@ export class InMemoryDataService implements InMemoryDbService {
 
     for (let i=0; i<cusipsToStartWith.length;i++) {
       let tempId = i + 1;
-      let readyForSetup = new CusipSetupTransition(tempId, new Date(), transitions[0]);
-      output.push(new Cusip(tempId, cusipsToStartWith[i], [readyForSetup]));
+      let readyForSetup = CusipSetupTransition.create(tempId, new Date(), transitions[0]);
+      output.push(Cusip.create(tempId, cusipsToStartWith[i], [readyForSetup]));
     }   
 
     LogHelper.trace(`in-mem getCusips: ${JSON.stringify(output)}`);

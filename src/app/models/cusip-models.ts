@@ -4,11 +4,13 @@ import { Email } from './email';
 
 export class Cusip {
     // SERVER DATA **************************************
+    id:number; 
+    name: string;
+    transitions: CusipSetupTransition[];
     addedDate: Date = new Date();
 
     setupPriorityType: string;  // trading, non-trading, unknown
-    productType: string; // equity, muni, corp, uit
-  
+    productType: string; // equity, muni, corp, uit  
 
     // CLIENT FUNCTIONALITY *****************************
     // couldn't get this to work
@@ -17,13 +19,22 @@ export class Cusip {
         Object.assign(this, init);
     }*/
 
-    public constructor(
-        public id:number, 
-        public name: string,
-        public transitions: CusipSetupTransition[]
-    ) {}
+    static create (
+        id:number, 
+        name: string,
+        transitions: CusipSetupTransition[]
+    ) : Cusip {
+        let output = new Cusip();
+
+        output.id = id;
+        output.name = name;
+        output.transitions = transitions;
+
+        return output;
+    }
 
     public getCurrentStatus(): CusipSetupTransition {
+        // todo: this should really sort by date and grab the most recent
         var length = this.transitions.length;
         if (length <= 0) return null;
         return this.transitions[length-1];
@@ -31,9 +42,21 @@ export class Cusip {
 };
 
 export class CusipSetupTransition {
-    public constructor (
-        public id: number,
-        public addedDate: Date,
-        public transition: SetupTransition
-    ){}
+    id: number;
+    addedDate: Date;
+    transition: SetupTransition;
+
+    static create (
+        id:number,
+        addedDate:Date,
+        transition:SetupTransition
+    ) : CusipSetupTransition {
+        let output = new CusipSetupTransition();
+
+        output.id = id;
+        output.addedDate = addedDate;
+        output.transition = transition;
+
+        return output;
+    }
 };

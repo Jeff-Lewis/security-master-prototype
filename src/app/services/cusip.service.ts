@@ -17,16 +17,16 @@ export class CusipService {
 
   getCusips(): Promise<Cusip[]> {
     const url = `${this.apiUrl}`;
-    return this.httpApi.get<Cusip>(url);
+    return this.httpApi.get<Cusip>(url, Cusip);
   }
 
   getCusipById(id:number): Promise<Cusip> {
     const url = `${this.apiUrl}/${id}`;
-    return this.httpApi.getSingle<Cusip>(url);
+    return this.httpApi.getSingle<Cusip>(url, Cusip);
   }
 
   getCusipByName(name:string): Promise<Cusip> {
     const url = `${this.apiUrl}?name=${name}`;
-    return this.httpApi.getSingle<Cusip>(url);
+    return this.httpApi.getSingle<Cusip>(url, Cusip);
   }
 }

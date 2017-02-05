@@ -22,7 +22,8 @@ export class CusipDetailComponent implements OnInit {
 
   constructor(
     private cusipService: CusipService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.route.params
@@ -33,23 +34,20 @@ export class CusipDetailComponent implements OnInit {
       })
       .subscribe(cusip => {
         if (cusip == null) return;
-        this.cusip = cusip;    
-
-        let test = new Cusip(this.cusip.id, this.cusip.name, this.cusip.transitions) ;
-        this.status = test.getCurrentStatus();  
-        LogHelper.trace(`${JSON.stringify(status)}`);
+        this.refreshCusipDisplay(cusip);
       });
   }
 
   ngOnChanges() {
-    this.loadCusip();
+    this.cusipService.getCusipById(this.cusipId).then((cusip) => this.refreshCusipDisplay(cusip));
   }
 
   close() {
     this.onClose.emit();
   }
 
-  loadCusip() {    
-    this.cusipService.getCusipById(this.cusipId).then((cusip) => this.cusip = cusip);
+  refreshCusipDisplay(cusip: Cusip) {
+    this.cusip = cusip;
+    this.status = this.cusip.getCurrentStatus();
   }
 }

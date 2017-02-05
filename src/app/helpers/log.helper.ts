@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 
 export class LogHelper {
 
-  constructor() { }
-
   static error(message, error): void {
     console.error('An error occurred', error); // for demo purposes only
   }
