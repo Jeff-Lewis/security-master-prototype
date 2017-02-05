@@ -1,5 +1,6 @@
 import { SetupTransition } from './lookup-models';
-import {Activity} from './activity';
+import { Activity } from './activity';
+import { Email } from './email';
 
 export class Cusip {
     // SERVER DATA **************************************

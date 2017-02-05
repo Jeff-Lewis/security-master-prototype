@@ -1,8 +1,15 @@
+div {
+    font-size: small;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
 table {
     color: #00008b;
 }
 
 td.date {
-    width: 17%;
-    font-size: small;
+    width: 25%;
+    font-size: smaller;
 }
