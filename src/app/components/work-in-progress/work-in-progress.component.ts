@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { WorkQueue } from '../../models/work-queue';
-
 import { Cusip } from '../../models/cusip-models';
 
 import { CusipService } from '../../services/cusip.service';
@@ -14,8 +12,6 @@ import { WorkInProgressService } from '../../services/work-in-progress.service';
 })
 
 export class WorkInProgressComponent implements OnInit { 
-  queues: WorkQueue[]; 
-  
   cusips: Cusip[];
   selectedCusip: Cusip;
 
