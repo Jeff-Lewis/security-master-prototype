@@ -2,8 +2,8 @@ export class ConvertHelper {
 
   static convert (source:any, targetClassType) : any {
       let output = new targetClassType();
-      for(var i in source)
-          output[i] = source[i];
+      for(let prop in source)
+          output[prop] = source[prop];
       return output;
   }
 }
