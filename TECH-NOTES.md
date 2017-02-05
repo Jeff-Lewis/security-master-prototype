@@ -48,7 +48,7 @@
 * Cusip Details
     * Add Entry details Rows 
     * Style Cusip Identification Rows
-    * Add Timeline
+    ~~* Add Timeline (dennis)*~~
     * Add Images
 * Add Images to project
 ### Research ########################################################
