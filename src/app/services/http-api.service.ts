@@ -30,7 +30,9 @@ export class HttpApiService {
       .then(response => {
         let jsonData = response.json().data;
         LogHelper.trace(`GET RESPONSE: ${url} - ${JSON.stringify(jsonData)}`);
-        return jsonData[0] as T;
+        
+        let output = (jsonData instanceof Array ? jsonData[0] : jsonData) as T;
+        return output;
       })
       .catch(this.handleError);
   }

@@ -5,21 +5,22 @@ import { LogHelper } from '../helpers/log.helper';
 
 import { Cusip } from '../models/cusip-models';
 import { SetupTransition, SetupTransitionWorkflow } from '../models/setup-transition-models';
+import { WorkInProgress } from '../models/wip-models';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     
-    let workInProgress = {
-        groups: null
-    };
-
+    let cusips = this.getCusips();
     let transitions = this.getSetupTransitions();
     let transitionWorkflows = this.getSetupTransitionWorkflows(transitions);
+    let workInProgress = new WorkInProgress(cusips, transitionWorkflows);
 
-    return {             
+    let apiEndpoints = {
       workInProgress,
-      cusips: this.getCusips()   
-    };
+      cusips
+    }
+
+    return apiEndpoints;
   }
 
   private getCusips() : Cusip[] {

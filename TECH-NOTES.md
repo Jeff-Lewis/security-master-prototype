@@ -25,6 +25,8 @@
 *   Isolate "transition queues" into "work groups" (i.e. setup, QC,
     and Audit)
 
+*   Cleanup: fix current linting errors (ng lint)
+
 *   Refactor out Cusip.setupPriorityType to complex object
     *   include params for things like styles, etc.
 *   Refactor out Cusip.productType to complex object

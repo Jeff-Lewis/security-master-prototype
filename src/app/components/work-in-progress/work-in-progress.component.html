@@ -22,9 +22,9 @@
   </button>
 </div>
 
-<div *ngIf="cusips">
+<div *ngIf="wip && wip.cusips">
   <app-cusip-card 
-    *ngFor="let cusip of cusips" 
+    *ngFor="let cusip of wip.cusips" 
     [cusip]="cusip"
     (onShowDetail)="showCusipDetail($event)">
   </app-cusip-card>

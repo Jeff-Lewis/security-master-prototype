@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Cusip } from '../../models/cusip-models';
+import { WorkInProgress } from '../../models/wip-models';
+
+import { LogHelper } from '../../helpers/log.helper';
 
 import { CusipService } from '../../services/cusip.service';
 import { WorkInProgressService } from '../../services/work-in-progress.service';
@@ -12,12 +15,12 @@ import { WorkInProgressService } from '../../services/work-in-progress.service';
 })
 
 export class WorkInProgressComponent implements OnInit { 
-  cusips: Cusip[];
+  wip: WorkInProgress;    
   selectedCusip: Cusip;
 
   constructor(    
     private cusipService: CusipService,
-        private workInProgressService: WorkInProgressService
+    private workInProgressService: WorkInProgressService
   ) { }
 
   ngOnInit() {
@@ -26,7 +29,7 @@ export class WorkInProgressComponent implements OnInit {
 
   addCusip(cusipName: string) {
     this.cusipService.create(cusipName).then((cusip) => {
-      this.cusips.push(cusip);
+      this.wip.cusips.push(cusip);
     });
   }
 
@@ -35,12 +38,8 @@ export class WorkInProgressComponent implements OnInit {
   }
 
   loadWorkInProgress() {
-    this.cusipService.getCusips().then(cusips => {
-      this.cusips = cusips;
-    });
-
     this.workInProgressService.getWorkInProgress().then(wip => {
-        
+        this.wip = wip;        
     });
   }
 

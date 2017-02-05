@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { LogHelper } from '../helpers/log.helper';
-import { WorkInProgress } from '../models/work-in-progress';
+import { WorkInProgress } from '../models/wip-models';
 import { HttpApiService } from '../services/http-api.service';
 
 @Injectable()
