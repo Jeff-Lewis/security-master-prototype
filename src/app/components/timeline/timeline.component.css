@@ -4,7 +4,7 @@
 
 .timeline {
   height: 20px;
-  margin-top: 5%;
+  margin-top: 3%;
   background: rgba(252,236,252,1);
   background: -webkit-linear-gradient(left, orange, orange 20%, red 20%, black);
 }
@@ -60,6 +60,7 @@ div:nth-child(7) {
 span {
   display: inline-block;
   margin-top: 6px;
+  padding-top: 25px;
   width: 66px;
   height: 66px;
   position: relative;
@@ -75,6 +76,6 @@ stageValue {
   font-size: 2.1rem;
   display: block;
   position: relative;
-  top: -68%;
+  /*top: -68%;*/
   text-align: center;
 }
