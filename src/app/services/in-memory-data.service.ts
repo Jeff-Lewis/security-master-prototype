@@ -3,16 +3,16 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import { LogHelper } from '../helpers/log.helper';
 
-import { Cusip } from '../models/cusip-models';
+import { Cusip, CusipSetupTransition } from '../models/cusip-models';
 import { SetupTransition, SetupTransitionWorkflow } from '../models/setup-transition-models';
 import { WorkInProgress } from '../models/wip-models';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    
-    let cusips = this.getCusips();
     let transitions = this.getSetupTransitions();
     let transitionWorkflows = this.getSetupTransitionWorkflows(transitions);
+    
+    let cusips = this.getCusips(transitions);
     let workInProgress = new WorkInProgress(cusips, transitionWorkflows);
 
     let apiEndpoints = {
@@ -23,13 +23,15 @@ export class InMemoryDataService implements InMemoryDbService {
     return apiEndpoints;
   }
 
-  private getCusips() : Cusip[] {
+  private getCusips(transitions: SetupTransition[]) : Cusip[] {
     let output = [];
 
     let cusipsToStartWith = ['123456TY9','98766BH12', '72856YT78'];
 
     for (let i=0; i<cusipsToStartWith.length;i++) {
-      output.push(new Cusip(i+1, cusipsToStartWith[i]));
+      let tempId = i + 1;
+      let readyForSetup = new CusipSetupTransition(tempId, new Date(), transitions[0]);
+      output.push(new Cusip(tempId, cusipsToStartWith[i], [readyForSetup]));
     }   
 
     LogHelper.trace(`in-mem getCusips: ${JSON.stringify(output)}`);

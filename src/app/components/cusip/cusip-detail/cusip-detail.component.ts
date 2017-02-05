@@ -3,7 +3,7 @@ import { ActivatedRoute, Params }   from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 
-import { Cusip } from '../../../models/cusip-models';
+import { Cusip, CusipSetupTransition } from '../../../models/cusip-models';
 import { LogHelper } from '../../../helpers/log.helper';
 import { CusipService } from '../../../services/cusip.service';
 
@@ -18,6 +18,7 @@ export class CusipDetailComponent implements OnInit {
   @Output() onClose = new EventEmitter();
 
   cusip: Cusip;
+  status: CusipSetupTransition;
 
   constructor(
     private cusipService: CusipService,
@@ -32,7 +33,11 @@ export class CusipDetailComponent implements OnInit {
       })
       .subscribe(cusip => {
         if (cusip == null) return;
-        this.cusip = cusip;                
+        this.cusip = cusip;    
+
+        let test = new Cusip(this.cusip.id, this.cusip.name, this.cusip.transitions) ;
+        this.status = test.getCurrentStatus();  
+        LogHelper.trace(`${JSON.stringify(status)}`);
       });
   }
 
