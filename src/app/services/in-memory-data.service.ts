@@ -4,72 +4,20 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { LogHelper } from '../helpers/log.helper';
 
 import { Cusip } from '../models/cusip-models';
+import { SetupTransition, SetupTransitionWorkflow } from '../models/setup-transition-models';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    var now = Date.now.toString();
-
-    let setupRequestStatuses = [
-      {id: 1, name: 'Ready For Setup' },
-      {id: 2, name: 'Needs Rework' },
-      {id: 3, name: 'Setup In Progress' },
-      {id: 4, name: 'Ready For QC' },
-      {id: 5, name: 'QC In Progress' },
-      {id: 6, name: 'Ready For Audit' },
-      {id: 7, name: 'Audit In Progress' },
-      {id: 8, name: 'Done' }
-    ];
-
-    let workQueues = [];
-    for (var i=0; i<setupRequestStatuses.length;i++){
-      var status = setupRequestStatuses[i];
-      var queue = {
-        id: status.id, 
-        currentStatus: status,
-        previousStatus: i > 0 ? setupRequestStatuses[i-1] : null,
-        nextStatus: i < (setupRequestStatuses.length-1) ? setupRequestStatuses[i+1] : null
-      };
-      workQueues.push(queue);
-    }
-
-    var reworkStatus = setupRequestStatuses[1];
-    //Needs Rework
-    workQueues[1].previousStatus = null;
-    //Setup In Progress 
-    workQueues[2].previousStatus = null; 
-    // Ready For QC
-    workQueues[3].previousStatus = null;
-    // QC In Progress
-    workQueues[4].previousStatus = reworkStatus;
-    // Ready For Audit
-    workQueues[5].previousStatus = null;
-    // Audit In Progress
-    workQueues[6].previousStatus = reworkStatus;
-    // Done
-    workQueues[7].previousStatus = null;
-
-    var q = workQueues;
-    let workQueueGroups = [
-      {id: 1, name: 'Setup', queues: [q[0], q[1], q[2], q[3]]},
-      {id: 2, name: 'QC', queues: [q[3], q[4], q[5]]},
-      {id: 3, name: 'Audit', queues: [q[5], q[6], q[7]]}
-    ];
-
-    var cusipsToStartWith = ['123456TY9','98766BH12', '72856YT78'];
-    let setupRequests = [];
-    for (var i=0; i<cusipsToStartWith.length;i++) {
-      setupRequests.push({id: i+1, cusip: cusipsToStartWith[i], statusId: 1, addedDate: new Date()});
-    }
-    LogHelper.trace(`Checking in-mem setupRequests - ${JSON.stringify(setupRequests)}`);
-
+    
     let workInProgress = {
-        groups: workQueueGroups,
-        setupRequests: setupRequests             
+        groups: null
     };
+
+    let transitions = this.getSetupTransitions();
+    let transitionWorkflows = this.getSetupTransitionWorkflows(transitions);
 
     return {             
       workInProgress,
-      setupRequests,
       cusips: this.getCusips()   
     };
   }
@@ -77,13 +25,66 @@ export class InMemoryDataService implements InMemoryDbService {
   private getCusips() : Cusip[] {
     let output = [];
 
-    var cusipsToStartWith = ['123456TY9','98766BH12', '72856YT78'];
+    let cusipsToStartWith = ['123456TY9','98766BH12', '72856YT78'];
 
-    for (var i=0; i<cusipsToStartWith.length;i++) {
+    for (let i=0; i<cusipsToStartWith.length;i++) {
       output.push(new Cusip(i+1, cusipsToStartWith[i]));
     }   
 
     LogHelper.trace(`in-mem getCusips: ${JSON.stringify(output)}`);
+    return output;
+  }
+
+  private getSetupTransitions(): SetupTransition[] {
+    let output = [];
+    let names = [
+      'Ready For Setup', 
+      'Needs Rework',
+      'Setup In Progress',
+      'Ready For QC',
+      'QC In Progress',
+      'Ready For Audit',
+      'Audit In Progress',
+      'Done'
+    ];
+
+    for (let i=0; i<names.length; i++) {
+      output.push({ id: i+1, name: names[i]});
+    }
+
+    return output;
+  }
+
+  private getSetupTransitionWorkflows(transitions:SetupTransition[]): SetupTransitionWorkflow[] {
+    let output = [];   
+    
+    for (let i=0; i<transitions.length;i++){
+      let transition = transitions[i];
+      let queue = {
+        id: transition.id, 
+        current: status,
+        previous: i > 0 ? transitions[i-1] : null,
+        next: i < (transitions.length-1) ? transitions[i+1] : null
+      };
+      output.push(queue);
+    }
+
+    let reworkTransition = transitions[1];
+    //Needs Rework
+    output[1].previousStatus = null;
+    //Setup In Progress 
+    output[2].previousStatus = null; 
+    // Ready For QC
+    output[3].previousStatus = null;
+    // QC In Progress
+    output[4].previousStatus = reworkTransition;
+    // Ready For Audit
+    output[5].previousStatus = null;
+    // Audit In Progress
+    output[6].previousStatus = reworkTransition;
+    // Done
+    output[7].previousStatus = null;
+
     return output;
   }
 }

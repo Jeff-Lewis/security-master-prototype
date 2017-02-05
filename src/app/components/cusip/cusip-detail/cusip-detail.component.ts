@@ -26,7 +26,7 @@ export class CusipDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) =>  {
-        var cusipName = params['cusip'];
+        let cusipName = params['cusip'];
         if (cusipName == undefined || cusipName == null) return new Promise<Cusip>(null);
         return this.cusipService.getCusipByName(cusipName);
       })

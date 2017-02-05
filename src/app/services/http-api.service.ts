@@ -16,7 +16,7 @@ export class HttpApiService {
     return this.http.get(url)
       .toPromise()
       .then(response => {
-        var jsonData = response.json().data;
+        let jsonData = response.json().data;
         LogHelper.trace(`GET RESPONSE: ${url} - ${JSON.stringify(jsonData)}`);
         return jsonData as T[];
       })
@@ -28,7 +28,7 @@ export class HttpApiService {
     return this.http.get(url)
       .toPromise()
       .then(response => {
-        var jsonData = response.json().data;
+        let jsonData = response.json().data;
         LogHelper.trace(`GET RESPONSE: ${url} - ${JSON.stringify(jsonData)}`);
         return jsonData[0] as T;
       })
@@ -36,13 +36,13 @@ export class HttpApiService {
   }
 
   post<T>(url:string, data: any): Promise<T> {
-    var dataJson = JSON.stringify(data);
+    let dataJson = JSON.stringify(data);
     LogHelper.trace(`POST REQUEST: ${url} - ${dataJson}`);    
     return this.http
       .post(url, dataJson, {headers: this.headers})
       .toPromise()
       .then(res => {
-        var responseData = res.json().data;
+        let responseData = res.json().data;
         LogHelper.trace(`POST RESPONSE: ${url} - ${JSON.stringify(responseData)}`);
         return responseData as T;
       })

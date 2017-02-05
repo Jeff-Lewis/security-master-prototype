@@ -1,4 +1,4 @@
-import { SetupTransition } from './lookup-models';
+import { SetupTransition } from './setup-transition-models';
 import { Activity } from './activity';
 import { Email } from './email';
 

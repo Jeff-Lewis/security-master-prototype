@@ -20,7 +20,7 @@
 *   ~~*Get list of cusips to show (jake)*~~
 *   ~~*Add cusip (jake)*~~
 *   ~~*Add detail endpoint for cusips (jake)*~~
-*   Move cusips between "transitions"
+*   *Move cusips between "transitions" (jake)*
 *   Get cusips into "transition queues"
 *   Isolate "transition queues" into "work groups" (i.e. setup, QC,
     and Audit)
@@ -35,7 +35,7 @@
 *   Design "not found cusip detail" strategy
 *   Design resiliency into HttpApiService
     *   getSingle doesn't verify there's an item [0]
-    *   handle common HTTP errors
+    *   handle common HTTP errors (404, 500, etc...)
     *   there's plenty more...
 
 ### Design ##########################################################
