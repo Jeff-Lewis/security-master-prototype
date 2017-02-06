@@ -4,6 +4,56 @@
   </h1>
   <button (click)="close()">Close</button>
 </div>
+<div class="container">
+  <div class="row"> 
+      <div class="col-md-4 text-left">                
+          <span id="cusip">
+              <!--<img src="images/Icon-EmailBlackTrans.png" alt="email"/>
+              <img src="images/icon-Letter E Red Solid.png" alt="equity"/> 
+              <img src="images/Icon-Graph.png" alt="trading"/>-->
+              <b>XXXXXXXX1</b>
+          </span>
+      </div>
+      <div class="col-md-4 text-center">
+          <h4>Elapsed Time: MM:SS</h4>
+      </div>
+      <div class="col-md-3 text-right">
+          <button type="button" class="btn btn-success">Setup Complete</button>
+      </div>
+  </div>
+</div>
+<div class="container">
+<div class="row">
+    <div class="btn-group">                
+        <button type="button" class="btn btn-sm btn-info dropdown-toggle" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/Icon-Graph.png" alt="trading"/>
+              <label style="color:#000000; padding: 0 4px 0 4px;"> 
+                Trade Related
+              </label>
+              <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Trade Related</a></li>
+            <li><a href="#">Unclassified</a></li>
+            <li><a href="#">Non-Trading</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">                
+        <button type="button" class="btn btn-sm btn-info dropdown-toggle" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/icon-Letter E Red Solid.png" alt="equity"/> 
+              Equity 
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Equity</a></li>
+            <li><a href="#">Muni</a></li>
+            <li><a href="#">Corp</a></li>
+        </ul>
+    </div>
+</div>
+</div>
 <div class="row">
   <app-timeline></app-timeline>
 </div>
