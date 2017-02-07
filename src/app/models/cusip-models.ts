@@ -1,4 +1,4 @@
-import { SetupTransition } from './setup-transition-models';
+import { SetupTransition, SetupTransitionWorkflow } from './setup-transition-models';
 import { Activity } from './activity';
 import { Email } from './email';
 import { Timeline } from './timeline';
@@ -36,9 +36,17 @@ export class Cusip {
 
     public getCurrentStatus(): CusipSetupTransition {
         // todo: this should really sort by date and grab the most recent
+        if (this.transitions == null || this.transitions == undefined) return null;
+
         var length = this.transitions.length;
         if (length <= 0) return null;
         return this.transitions[length-1];
+    }
+
+    public getCurrentWorkflow(workflows: SetupTransitionWorkflow[]) : SetupTransitionWorkflow {
+        var currentStatus = this.getCurrentStatus();
+        if (currentStatus == null || workflows == null) return null;
+        return workflows[0];
     }
 };
 

@@ -69,16 +69,14 @@
             <h4>Elapsed Time: MM:SS</h4>
         </div>
         <div class="col-md-4 pull-right">
-            <button type="button" class="btn btn-success" style="color:#000000;">Setup Complete</button>
+            <app-cusip-workflow-commands [workflow]="getCurrentWorkflow()"></app-cusip-workflow-commands>            
         </div>
     </div>
     <div class="row component">
         <div class="col-md-6">
-
             <app-activity></app-activity>
         </div>
         <div class="col-md-6">
-
             <app-email></app-email>
         </div>
     </div>

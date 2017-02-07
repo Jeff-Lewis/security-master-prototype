@@ -9,18 +9,20 @@ import { AppRoutingModule }     from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
 
+import { ActivityComponent } from './components/activity/activity.component';
 import { CusipCardComponent } from './components/cusip/cusip-card/cusip-card.component';
 import { CusipDetailComponent } from './components/cusip/cusip-detail/cusip-detail.component';
-import { WorkInProgressComponent } from './components/work-in-progress/work-in-progress.component';
-import { MainLayoutComponent } from './components/main-layout/main-layout.component';
+import { CusipWorkflowCommandsComponent } from './components/cusip/cusip-workflow-commands/cusip-workflow-commands.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EmailComponent } from './components/email/email.component';
+import { MainLayoutComponent } from './components/main-layout/main-layout.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
+import { WorkInProgressComponent } from './components/work-in-progress/work-in-progress.component';
 
 import { CusipService } from './services/cusip.service';
 import { HttpApiService } from './services/http-api.service';
 import { WorkInProgressService } from './services/work-in-progress.service';
-import { ActivityComponent } from './components/activity/activity.component';
-import { EmailComponent } from './components/email/email.component';
-import { TimelineComponent } from './components/timeline/timeline.component';
+import { WorkflowService } from './services/workflow.service';
 
 @NgModule({
   imports: [
@@ -40,12 +42,14 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     ActivityComponent,
     EmailComponent,
     TimelineComponent,
+    CusipWorkflowCommandsComponent,
   ],
   
   providers: [
     CusipService,
     HttpApiService,
-    WorkInProgressService
+    WorkInProgressService,
+    WorkflowService
   ],
   
   bootstrap: [MainLayoutComponent]

@@ -17,7 +17,8 @@ export class InMemoryDataService implements InMemoryDbService {
 
     let apiEndpoints = {
       workInProgress,
-      cusips
+      cusips,
+      workflows: transitionWorkflows
     }
 
     return apiEndpoints;
@@ -67,7 +68,7 @@ export class InMemoryDataService implements InMemoryDbService {
       let transition = transitions[i];
       let queue = {
         id: transition.id, 
-        current: status,
+        current: transitions[i],
         previous: i > 0 ? transitions[i-1] : null,
         next: i < (transitions.length-1) ? transitions[i+1] : null
       };
@@ -76,19 +77,19 @@ export class InMemoryDataService implements InMemoryDbService {
 
     let reworkTransition = transitions[1];
     //Needs Rework
-    output[1].previousStatus = null;
+    output[1].previous = null;
     //Setup In Progress 
-    output[2].previousStatus = null; 
+    output[2].previous = null; 
     // Ready For QC
-    output[3].previousStatus = null;
+    output[3].previous = null;
     // QC In Progress
-    output[4].previousStatus = reworkTransition;
+    output[4].previous = reworkTransition;
     // Ready For Audit
-    output[5].previousStatus = null;
+    output[5].previous = null;
     // Audit In Progress
-    output[6].previousStatus = reworkTransition;
+    output[6].previous = reworkTransition;
     // Done
-    output[7].previousStatus = null;
+    output[7].previous = null;
 
     return output;
   }
