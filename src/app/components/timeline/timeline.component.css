@@ -1,18 +1,16 @@
-.timeline-container {
-  height: 136px;
-}
 
 .timeline {
+  width: 53%;
   height: 10px;
-  margin-top: 5.5%;
+  margin-top: 1.8%;
   background: -webkit-linear-gradient(left, green, green 33%, #d0cfcf 33%, #d0cfcf);
 }
 
 div.stage {
   z-index: 99;
-  top: 10px;
-  width: 70px;
-  height: 70px;
+  top: 0;
+  width: 50px;
+  height: 50px;
   position: absolute;
   text-align: center;
   border: 0 solid #d0cfcf;
@@ -53,11 +51,12 @@ div:nth-child(7) {
 
 span {
   display: inline-block;
-  width: 57px;
-  height: 57px;
+  width: 40px;
+  height: 40px;
   position: relative;
   margin-top: 5px;
-  padding-top: 14px;
+  padding-top: 8px;
+  margin-bottom: 8px;
   border-radius: 50%;
   border-color: rgba(63, 55, 57, 0.5);;
   -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
@@ -71,6 +70,6 @@ span {
   position: relative;
   text-align: center;
   font-family: roboto;
-  font-size: 2.1rem;
+  font-size: 1.5rem;
   color: white;
 }
