@@ -18,7 +18,11 @@ img {
 .component {
     margin-top: 20px;
 }
-
+/*
 ul.dropdown-menu { 
     background-color: #CECBCE;
+}*/
+
+button:hover {
+    background-color: lightgray;
 }

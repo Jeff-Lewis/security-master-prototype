@@ -3,19 +3,19 @@
 }
 
 .timeline {
-  height: 20px;
-  margin-top: 3%;
-  background: -webkit-linear-gradient(left, blue, lightblue 22%, yellow 40%, green);
+  height: 10px;
+  margin-top: 5.5%;
+  background: -webkit-linear-gradient(left, green, green 33%, #d0cfcf 33%, #d0cfcf);
 }
 
 div.stage {
   z-index: 99;
   top: 10px;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   position: absolute;
   text-align: center;
-  border: 1px solid #d0cfcf;
+  border: 0 solid #d0cfcf;
   border-radius: 50%;
   -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
@@ -24,40 +24,40 @@ div.stage {
 
 div.stage:nth-child(1) {
   left: 8%;
-  background-color: rgb(144, 202, 249);
+  background-color: green;
 }
 div.stage:nth-child(2) {
   left: 21%;
-  background-color: rgb(255, 224, 130);
+  background-color: green;
 }
 div.stage:nth-child(3) {
   left: 33%;
-  background-color: rgb(174, 213, 129);
+  background-color: orange;
 }
 div:nth-child(4) {
   left: 46%;
-  background-color: #fff;
+  background-color: #d0cfcf;
 }
 div:nth-child(5) {
   left: 59%;
-  background-color: #fff;
+  background-color: #d0cfcf;
 }
 div:nth-child(6) {
   left: 72%;
-  background-color: #fff;
+  background-color: #d0cfcf;
 }
 div:nth-child(7) {
   left: 85%;
-  background-color: #fff;
+  background-color: #d0cfcf;
 }
 
 span {
   display: inline-block;
-  width: 66px;
-  height: 66px;
+  width: 57px;
+  height: 57px;
   position: relative;
-  margin-top: 6px;
-  padding-top: 25px;
+  margin-top: 5px;
+  padding-top: 14px;
   border-radius: 50%;
   border-color: rgba(63, 55, 57, 0.5);;
   -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
@@ -65,11 +65,12 @@ span {
   box-shadow: -1px -1px 28px -1px rgba(50, 50, 50, 0.5);
 }
 
-stageValue {
+.stageValue {
   /*top: -68%;*/
   display: block;
   position: relative;
   text-align: center;
   font-family: roboto;
   font-size: 2.1rem;
+  color: white;
 }
