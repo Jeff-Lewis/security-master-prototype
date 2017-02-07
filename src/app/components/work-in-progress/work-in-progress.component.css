@@ -1,0 +1,47 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #fff;
+
+    width: 900px;
+    max-width: 100%;
+
+    height: 600px;
+    max-height: 100%;
+
+    z-index: 1010;
+
+    display: flex;  
+}
+
+.modal-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* spacing as needed */
+    padding: 20px 50px 20px 20px;
+
+    /* let it scroll */
+    overflow: auto;
+
+    z-index: 1011;
+}
+
+.modal-overlay {
+    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}

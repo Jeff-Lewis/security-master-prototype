@@ -30,6 +30,8 @@
     and Audit)
 
 *   Cleanup: fix current linting errors (ng lint)
+*   Cleanup: more complex modal styling (Trello style)
+    *   https://css-tricks.com/considerations-styling-modal/
 
 *   Refactor out Cusip.setupPriorityType to complex object
     *   include params for things like styles, etc.

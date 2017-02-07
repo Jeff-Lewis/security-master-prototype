@@ -31,9 +31,14 @@
 </div>
 
 <div *ngIf="selectedCusip">
-  <app-cusip-detail
-    [cusipId] = "selectedCusip.id"
-    (onClose) = "closeSelectedCusipDetail()"
-  >
-  </app-cusip-detail>
+  <div class="modal">
+    <div class="modal-body">
+      <app-cusip-detail
+        [cusipId] = "selectedCusip.id"
+        (onClose) = "closeSelectedCusipDetail()"
+      >
+      </app-cusip-detail>
+    </div>
+  </div>
+  <div class="modal-overlay" (click)="closeSelectedCusipDetail()">
 </div>
