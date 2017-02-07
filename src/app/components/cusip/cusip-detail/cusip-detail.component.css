@@ -4,6 +4,7 @@ div.row {
 
 h1 {
     margin-top: 6px;
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 }
 
 h4 {
@@ -13,16 +14,37 @@ h4 {
 img {
   width: 16px;
   height: 16px;
+  margin-bottom: 2px;
 }
 
 .component {
     margin-top: 20px;
 }
-/*
-ul.dropdown-menu { 
-    background-color: #CECBCE;
-}*/
 
-button:hover {
-    background-color: lightgray;
+.dropdown-label {
+    padding-left: 3px;
+    color:#666; 
+}
+
+
+
+.btn.outline {
+	background: none;
+	/*padding: 12px 22px;*/
+}
+
+.btn-primary.outline {
+	border: 1px solid lightslategrey;
+    border-radius: 3px;
+	color: lightslategrey;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+	color: lightslategreyc;
+	border-color: lightslategrey;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+	border-color: lightslategrey;
+	color: lightslategrey;
+	box-shadow: none;
 }
