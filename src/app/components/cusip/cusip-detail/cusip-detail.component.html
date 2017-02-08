@@ -1,25 +1,27 @@
 <div *ngIf="cusip">
     <!--<button (click)="close()">Close</button>-->
     <div class="row">
-        <div class="col-md-4 col-md-offset-1">
-            <h1>{{cusip.name}}</h1>
-            <h4>Elapsed Time: MM:SS</h4>
-        </div>
-        <div class="col-md-7">
+        <div class="col-md-8 col-md-offset-1">
             <app-timeline
                 [moments]="timelineMoments"
             >
             </app-timeline>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-right">
+        <div class="col-md-3">
             <app-cusip-workflow-commands 
                 [workflow]="currentWorkflow"
                 (onSelect)="onSetupTransitionChange($event)">
             </app-cusip-workflow-commands>
         </div>
     </div>
+    <!--<div class="row">
+        <div class="col-md-12 text-right">
+            <app-cusip-workflow-commands 
+                [workflow]="currentWorkflow"
+                (onSelect)="onSetupTransitionChange($event)">
+            </app-cusip-workflow-commands>
+        </div>
+    </div>-->
     <div class="row">
         <div class="col-md-6">
             <div>
