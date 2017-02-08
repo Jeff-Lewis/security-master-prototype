@@ -1,20 +1,3 @@
-<!-- need to come back to this, disabling for now
-<div *ngIf="workQueueGroups">
-  <div class="dropdown">
-    <label>Current Work Group:</label>
-    <button class="btn btn-default dropdown-toggle" type="button" id="workGroupMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      {{selectedWorkQueueGroup.name}}
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="workGroupMenu">
-      <li *ngFor="let workQueueGroup of workQueueGroups">
-        <a (click)="setSelectedWorkQueueGroup(workQueueGroup)">{{workQueueGroup.name}}</a>     
-      </li>
-    </ul>
-  </div>
-</div>
--->
-
 <div>
   <label>Add Cusip:</label> <input #newSetupRequest placeholder="Cusip"/>
   <button (click)="addCusip(newSetupRequest.value); newSetupRequest.value=''">
@@ -32,14 +15,14 @@
 
 <div *ngIf="selectedCusip">
   <div class="modal">
-    <span>
-        <h2>485773SU8
-          <h3 class="pull-right" style="margin-top: 4px; margin-left: 30px;">Elapsed: 
-            <h3 class="pull-right" style="margin-top: 1px; margin-left: 3px;">7:38</h3>
-          </h3> 
-        </h2>
-            
+    <span style="width: 100%;">
+      <h2>{{selectedCusip.name}}
+        <h3 class="pull-right" style="margin-top: 4px; margin-left: 30px;">Elapsed: 
+          <h3  class="pull-right" style="margin-top: 1px; margin-left: 3px;">7:38</h3>
+        </h3>
+      </h2> 
     </span>
+    <div id="elapsedTimeAlert">This is an alert.</div>
     <div class="modal-body">
       <app-cusip-detail
         [cusipId] = "selectedCusip.id"
