@@ -5,7 +5,7 @@
         class="btn"
         (click)="select(previous)"
     >
-        p:{{previous.text}}
+        {{previous.text}}
     </button>
     <button
         *ngIf="next" 
@@ -13,7 +13,7 @@
         class="btn"
         (click)="select(next)"
     >
-        n:{{next.text}}
+        {{next.text}}
     </button> 
     <div>
         Current Status: {{getCurrentStatusText()}}
