@@ -5,7 +5,6 @@ export class Timeline {
 
     static create(moments:TimelineMoment[]) : Timeline {
         let positionLeftIncrement = 100 / moments.length;
-        LogHelper.trace(`positionLeftIncrement=${positionLeftIncrement}`);
         let output = new Timeline();
         output.elements = [];
 
@@ -23,9 +22,17 @@ export class Timeline {
     }
 }
 
+enum TimelineMomentState {
+    active,
+    complete,
+    danger,
+    disabled    
+}
+
 export class TimelineMoment {
     label: string;
     text: string;
+    state: TimelineMomentState;
 }
 
 export class TimelineElement {
