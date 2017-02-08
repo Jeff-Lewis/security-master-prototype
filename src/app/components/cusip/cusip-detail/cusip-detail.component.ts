@@ -32,9 +32,7 @@ export class CusipDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {    
-    this.workflowService.getWorkflows().then(workflows => {      
-      this.workflows = workflows
-    });
+    this.loadWorkflows();
     
     this.route.params
       .switchMap((params: Params) =>  {
@@ -49,6 +47,7 @@ export class CusipDetailComponent implements OnInit {
   }
 
   ngOnChanges() {
+    this.loadWorkflows();
     this.cusipService.getCusipById(this.cusipId).then((cusip) => this.setCusip(cusip));
   }
 
@@ -56,18 +55,14 @@ export class CusipDetailComponent implements OnInit {
     this.onClose.emit();
   }
 
-  getCurrentStatusText(): string {
-    // todo: law of detemer refactor
-    if (this.cusip == null) return "";
-
-    let status =  CusipHelper.getCurrentStatus( this.cusip);
-    if (status == null || status.transition == null) return "";
-
-    return status.transition.name;
-  }
-
   getCurrentWorkflow(): SetupTransitionWorkflow {
     return  CusipHelper.getCurrentWorkflow(this.cusip, this.workflows);
+  }
+
+  private loadWorkflows() {
+    this.workflowService.getWorkflows().then(workflows => {      
+      this.workflows = workflows
+    });
   }
 
   private setCusip(cusip: Cusip) {

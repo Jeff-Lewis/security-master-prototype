@@ -44,18 +44,22 @@ export class InMemoryDataService implements InMemoryDbService {
   private getSetupTransitions(): SetupTransition[] {
     let output = [];
     let names = [
-      'Ready For Setup', 
-      'Needs Rework',
-      'Setup In Progress',
-      'Ready For QC',
-      'QC In Progress',
-      'Ready For Audit',
-      'Audit In Progress',
-      'Done'
+      {name: 'Ready For Setup', text: 'Ready For Setup'}, 
+      {name: 'Needs Rework', text: 'Needs Rework'}, 
+      {name: 'Setup In Progress', text: 'Begin Setup'}, 
+      {name: 'Ready For QC', text: 'Setup Finished'}, 
+      {name: 'QC In Progress', text: 'Begin QC'}, 
+      {name: 'Ready For Audit', text: 'QC Finished'}, 
+      {name: 'Audit In Progress', text: 'Begin Audit'}, 
+      {name: 'Done', text: 'Audit Complete'}
     ];
 
     for (let i=0; i<names.length; i++) {
-      output.push({ id: i+1, name: names[i]});
+      output.push({ 
+        id: i+1, 
+        name: names[i].name, 
+        text: names[i].text
+      });
     }
 
     return output;
@@ -76,20 +80,34 @@ export class InMemoryDataService implements InMemoryDbService {
     }
 
     let reworkTransition = transitions[1];
-    //Needs Rework
+    let setupInProgressTransition = transitions[2];
+
+    // Ready for Setup
+    output[0].previous = null;
+    output[0].next = setupInProgressTransition;
+
+    // Needs Rework
     output[1].previous = null;
-    //Setup In Progress 
+    output[1].next = setupInProgressTransition;
+
+    // Setup In Progress 
     output[2].previous = null; 
+
     // Ready For QC
     output[3].previous = null;
+
     // QC In Progress
     output[4].previous = reworkTransition;
+
     // Ready For Audit
     output[5].previous = null;
+
     // Audit In Progress
     output[6].previous = reworkTransition;
+
     // Done
     output[7].previous = null;
+    output[7].next = null;
 
     return output;
   }

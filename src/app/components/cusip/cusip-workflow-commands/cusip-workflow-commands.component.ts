@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LogHelper } from '../../../helpers/log.helper';
-import { SetupTransitionWorkflow } from '../../../models/setup-transition-models';
+import { SetupTransition, SetupTransitionWorkflow } from '../../../models/setup-transition-models';
 
 @Component({
   selector: 'app-cusip-workflow-commands',
@@ -10,9 +10,14 @@ import { SetupTransitionWorkflow } from '../../../models/setup-transition-models
 export class CusipWorkflowCommandsComponent implements OnInit {
   @Input() workflow: SetupTransitionWorkflow;
 
+  previous: SetupTransition;
+  next: SetupTransition;
+
   constructor() { }
 
   ngOnInit() {
+    this.previous = this.workflow.previous;
+    this.next = this.workflow.next;
   }
 
   getCurrentStatusText() : string {
