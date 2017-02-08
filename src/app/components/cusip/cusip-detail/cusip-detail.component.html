@@ -11,7 +11,10 @@
     </div>
     <div class="row">
         <div class="col-md-12 text-right">
-            <app-cusip-workflow-commands [workflow]="getCurrentWorkflow()"></app-cusip-workflow-commands>
+            <app-cusip-workflow-commands 
+                [workflow]="getCurrentWorkflow()"
+                (onSelect)="onSetupTransitionChange($event)">
+            </app-cusip-workflow-commands>
         </div>
     </div>
     <div class="row">

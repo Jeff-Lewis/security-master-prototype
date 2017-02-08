@@ -4,7 +4,7 @@ import { ActivatedRoute, Params }   from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 import { Cusip, CusipSetupTransition } from '../../../models/cusip-models';
-import { SetupTransitionWorkflow } from '../../../models/setup-transition-models';
+import { SetupTransition, SetupTransitionWorkflow } from '../../../models/setup-transition-models';
 
 import { LogHelper } from '../../../helpers/log.helper';
 import { CusipHelper } from '../../../helpers/cusip.helper';
@@ -22,6 +22,7 @@ export class CusipDetailComponent implements OnInit {
   @Input() cusipId: number;
   @Output() onClose = new EventEmitter();
 
+  currentWorkflow: SetupTransitionWorkflow;
   cusip: Cusip;
   workflows: SetupTransitionWorkflow[];
 
@@ -57,6 +58,12 @@ export class CusipDetailComponent implements OnInit {
 
   getCurrentWorkflow(): SetupTransitionWorkflow {
     return  CusipHelper.getCurrentWorkflow(this.cusip, this.workflows);
+  }
+
+  onSetupTransitionChange(transition:SetupTransition) {
+    this.cusipService.addTransition(this.cusip, transition).then(cusip => {
+      this.cusip = cusip;
+    });
   }
 
   private loadWorkflows() {

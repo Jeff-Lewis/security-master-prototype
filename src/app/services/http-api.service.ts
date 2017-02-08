@@ -52,6 +52,20 @@ export class HttpApiService {
       .catch(this.handleError);
   }
 
+  put<T>(url:string, data:any): Promise<T> {
+    let dataJson = JSON.stringify(data);
+    LogHelper.trace(`PUT REQUEST: ${url} - ${dataJson}`);    
+    return this.http
+      .put(url, dataJson, {headers: this.headers})
+      .toPromise()
+      .then(res => {
+        let responseData = data;
+        LogHelper.trace(`PUT RESPONSE: <<DOESN'T RETURN DATA FROM IN-MEM API>>`);
+        return <T>responseData;
+      })
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     // need to come up w/ a better error handler
     LogHelper.error('An error occurred during http-api call: ', error);

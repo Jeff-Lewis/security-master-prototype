@@ -3,6 +3,7 @@
         *ngIf="previous" 
         type="button"
         class="btn"
+        (click)="select(previous)"
     >
         p:{{previous.text}}
     </button>
@@ -10,6 +11,7 @@
         *ngIf="next" 
         type="button"
         class="btn"
+        (click)="select(next)"
     >
         n:{{next.text}}
     </button> 
