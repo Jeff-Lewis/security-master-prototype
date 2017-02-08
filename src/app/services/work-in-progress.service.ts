@@ -12,6 +12,6 @@ export class WorkInProgressService {
   constructor(private httpApi:HttpApiService) { }
 
   getWorkInProgress(): Promise<WorkInProgress> {
-      return this.httpApi.getSingle<WorkInProgress>(this.apiUrl, WorkInProgress);
+      return this.httpApi.getSingle<WorkInProgress>(this.apiUrl);
   }
 }

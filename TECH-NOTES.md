@@ -12,6 +12,9 @@
         *   Models should always have a parameterless constructor
         *   Use a static "create" method in the place of a constructor
             with parameters
+        *   Do not put behavior here...they're only used to represent data
+            that goes across network boundaries.  If you need behavior, then
+            spin up a helper class to act on the data.
     *   **services**: Angular services
 *   Use LogHelper extensively for tracing (we can turn off in PROD)
 

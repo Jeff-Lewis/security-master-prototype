@@ -17,7 +17,6 @@ export class CusipWorkflowCommandsComponent implements OnInit {
 
   getCurrentStatusText() : string {
     let current = this.workflow.current;
-    LogHelper.trace(`${JSON.stringify(this.workflow)}`);
     return (current) ? current.name : "";
   }
 }

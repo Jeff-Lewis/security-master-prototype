@@ -3,10 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { ConvertHelper } from '../helpers/convert.helper';
 import { LogHelper } from '../helpers/log.helper';
-
-import { Cusip } from '../models/cusip-models';
 
 @Injectable()
 export class HttpApiService {
@@ -14,25 +11,20 @@ export class HttpApiService {
 
   constructor(private http:Http) { }
 
-  get<T>(url:string, TClassType:any): Promise<T[]> {
+  get<T>(url:string): Promise<T[]> {
     LogHelper.trace(`GET REQUEST: ${url}`)
     return this.http.get(url)
       .toPromise()
       .then(response => {
         let jsonData = response.json().data;
         LogHelper.trace(`GET RESPONSE: ${url} - ${JSON.stringify(jsonData)}`);
-
-        let output = [];
-        for (let instance in jsonData) {
-          output.push(this.getTypedInstance(instance, TClassType));
-        }
-
-        return <T[]>output;
+        return jsonData as T[];
+        
       })
       .catch(this.handleError);
   }
 
-  getSingle<T>(url:string, TClassType:any): Promise<T> {
+  getSingle<T>(url:string): Promise<T> {
     LogHelper.trace(`GET REQUEST: ${url}`)
     return this.http.get(url)
       .toPromise()
@@ -40,8 +32,7 @@ export class HttpApiService {
         let jsonData = response.json().data;
         LogHelper.trace(`GET RESPONSE: ${url} - ${JSON.stringify(jsonData)}`);
         
-        let apiOutput = <T>(jsonData instanceof Array ? jsonData[0] : jsonData);
-        let output = this.getTypedInstance(apiOutput, TClassType);
+        let output = <T>(jsonData instanceof Array ? jsonData[0] : jsonData);        
         return output;
       })
       .catch(this.handleError);
@@ -66,8 +57,4 @@ export class HttpApiService {
     LogHelper.error('An error occurred during http-api call: ', error);
     return Promise.reject(error.message || error);
   }  
-
-  private getTypedInstance<T>(json:any, TClassType:any) : T {
-    return ConvertHelper.convert(json, TClassType);
-  }
 }

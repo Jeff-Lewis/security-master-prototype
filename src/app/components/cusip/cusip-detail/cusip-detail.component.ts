@@ -7,6 +7,8 @@ import { Cusip, CusipSetupTransition } from '../../../models/cusip-models';
 import { SetupTransitionWorkflow } from '../../../models/setup-transition-models';
 
 import { LogHelper } from '../../../helpers/log.helper';
+import { CusipHelper } from '../../../helpers/cusip.helper';
+
 import { CusipService } from '../../../services/cusip.service';
 import { WorkflowService } from '../../../services/workflow.service';
 
@@ -30,8 +32,7 @@ export class CusipDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {    
-    this.workflowService.getWorkflows().then(workflows => {
-      LogHelper.trace(`cusip-detail-component=${JSON.stringify(workflows)}`);
+    this.workflowService.getWorkflows().then(workflows => {      
       this.workflows = workflows
     });
     
@@ -59,14 +60,14 @@ export class CusipDetailComponent implements OnInit {
     // todo: law of detemer refactor
     if (this.cusip == null) return "";
 
-    let status = this.cusip.getCurrentStatus();
+    let status =  CusipHelper.getCurrentStatus( this.cusip);
     if (status == null || status.transition == null) return "";
 
     return status.transition.name;
   }
 
   getCurrentWorkflow(): SetupTransitionWorkflow {
-    return this.cusip.getCurrentWorkflow(this.workflows);
+    return  CusipHelper.getCurrentWorkflow(this.cusip, this.workflows);
   }
 
   private setCusip(cusip: Cusip) {

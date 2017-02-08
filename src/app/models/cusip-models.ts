@@ -33,21 +33,6 @@ export class Cusip {
 
         return output;
     }
-
-    public getCurrentStatus(): CusipSetupTransition {
-        // todo: this should really sort by date and grab the most recent
-        if (this.transitions == null || this.transitions == undefined) return null;
-
-        var length = this.transitions.length;
-        if (length <= 0) return null;
-        return this.transitions[length-1];
-    }
-
-    public getCurrentWorkflow(workflows: SetupTransitionWorkflow[]) : SetupTransitionWorkflow {
-        var currentStatus = this.getCurrentStatus();
-        if (currentStatus == null || workflows == null) return null;
-        return workflows[0];
-    }
 };
 
 export class CusipSetupTransition {
