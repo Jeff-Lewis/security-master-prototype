@@ -5,6 +5,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { Cusip, CusipSetupTransition } from '../../../models/cusip-models';
 import { SetupTransition, SetupTransitionWorkflow } from '../../../models/setup-transition-models';
+import { TimelineMoment } from '../../../models/timeline-models';
 
 import { LogHelper } from '../../../helpers/log.helper';
 import { CusipHelper } from '../../../helpers/cusip.helper';
@@ -24,6 +25,7 @@ export class CusipDetailComponent implements OnInit {
 
   currentWorkflow: SetupTransitionWorkflow;
   cusip: Cusip;
+  timelineMoments: TimelineMoment[];
   workflows: SetupTransitionWorkflow[];
 
   constructor(
@@ -71,5 +73,6 @@ export class CusipDetailComponent implements OnInit {
   private setCusip(cusip: Cusip) {
     this.cusip = cusip;
     this.currentWorkflow = CusipHelper.getCurrentWorkflow(this.cusip, this.workflows);
+    this.timelineMoments = CusipHelper.getTimelineMoments(this.cusip, this.workflows);
   }
 }

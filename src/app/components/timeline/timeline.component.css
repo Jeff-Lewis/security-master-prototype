@@ -3,7 +3,7 @@
   width: 90%; 
   height: 10px;
   margin-top: 20px;
-  background: -webkit-linear-gradient(left, green, green 33%, #d0cfcf 33%, #d0cfcf);
+  background: -webkit-linear-gradient(left, green, green 36%, #d0cfcf 36%, #d0cfcf);
 }
 
 div.stage {
@@ -20,11 +20,41 @@ div.stage {
   -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
   box-shadow: 2px 3px 8px 0 rgba(50, 50, 50, 0.5);*/
 
--webkit-box-shadow: inset 0px 0px 0 5px rgba(63, 55, 57,0.1);
--moz-box-shadow: inset 0px 0px 0 5px rgba(63, 55, 57,0.1);
-box-shadow: inset 0px 0px 0 5px rgba(63, 55, 57,0.1);
+  -webkit-box-shadow: inset 0px 0px 0 5px rgba(63, 55, 57,0.1);
+  -moz-box-shadow: inset 0px 0px 0 5px rgba(63, 55, 57,0.1);
+  box-shadow: inset 0px 0px 0 5px rgba(63, 55, 57,0.1);
 }
 
+span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin-top: 5px;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  border-color: rgba(63, 55, 57, 0.5);
+
+  /*-webkit-box-shadow: inset -1px -1px 25px 1px rgba(63, 55, 57,0.8);
+  -moz-box-shadow: inset -1px -1px 25px 1px rgba(63, 55, 57,0.8);
+  box-shadow: inset -1px -1px 25px 1px rgba(63, 55, 57,0.8);*/
+
+  /*-webkit-box-shadow: -3px -1px 25px 1px rgba(63, 55, 57,0.8);
+  -moz-box-shadow: -3px -1px 25px 1px rgba(63, 55, 57,0.8);
+  box-shadow: -3px -1px 25px 1px rgba(63, 55, 57,0.8);*/
+
+  /* original*/
+  -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+  box-shadow: -1px -1px 28px -1px rgba(50, 50, 50, 0.5);
+}
+
+div.stage {
+  background-color: #d0cfcf;
+}
+
+/*
 div.stage:nth-child(1) {
   left: 0;
   background-color: green;
@@ -53,31 +83,7 @@ div:nth-child(7) {
   left: 85.71%;
   background-color: #d0cfcf;
 }
-
-span {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  margin-top: 5px;
-  padding-top: 10px;
-  margin-bottom: 8px;
-  border-radius: 50%;
-  border-color: rgba(63, 55, 57, 0.5);
-
-  /*-webkit-box-shadow: inset -1px -1px 25px 1px rgba(63, 55, 57,0.8);
-  -moz-box-shadow: inset -1px -1px 25px 1px rgba(63, 55, 57,0.8);
-  box-shadow: inset -1px -1px 25px 1px rgba(63, 55, 57,0.8);*/
-
-  /*-webkit-box-shadow: -3px -1px 25px 1px rgba(63, 55, 57,0.8);
-  -moz-box-shadow: -3px -1px 25px 1px rgba(63, 55, 57,0.8);
-  box-shadow: -3px -1px 25px 1px rgba(63, 55, 57,0.8);*/
-
-  /* original*/
-  -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
-  box-shadow: -1px -1px 28px -1px rgba(50, 50, 50, 0.5);
-}
+*/
 
 .stageValue {
   /*top: -68%;*/

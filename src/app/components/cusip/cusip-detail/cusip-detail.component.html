@@ -6,7 +6,10 @@
             <h4>Elapsed Time: MM:SS</h4>
         </div>
         <div class="col-md-7">
-            <app-timeline></app-timeline>
+            <app-timeline
+                [moments]="timelineMoments"
+            >
+            </app-timeline>
         </div>
     </div>
     <div class="row">

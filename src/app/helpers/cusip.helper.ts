@@ -1,5 +1,6 @@
 import { Cusip, CusipSetupTransition } from '../models/cusip-models';
 import { SetupTransitionWorkflow } from '../models/setup-transition-models';
+import { TimelineMoment } from '../models/timeline-models';
 
 export class CusipHelper {
     static getCurrentStatus(cusip:Cusip): CusipSetupTransition {
@@ -17,5 +18,17 @@ export class CusipHelper {
 
         let results = workflows.filter(workflow => workflow.current.id == currentStatus.transition.id);
         return results.length < 0 ? null : results[0];
+    }
+
+    static getTimelineMoments(cusip:Cusip, workflows: SetupTransitionWorkflow[]) : TimelineMoment[] {
+        let output = [];
+
+        for (let i=0; i<workflows.length; i++) {
+            let moment = new TimelineMoment();
+            moment.label = workflows[i].current.name;
+            output.push(moment);
+        }
+
+        return output;
     }
 }

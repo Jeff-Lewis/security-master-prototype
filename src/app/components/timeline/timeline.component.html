@@ -1,48 +1,55 @@
-  <div>
-    <!--<div class="container">-->
-      <div class="timeline">
-        <div class="stage" id="one">
-            <span>
-              <label class="stageValue">1:43</label>
-            </span>            
-            <p class="stageFont">Ready for Setup</p>                 
-        </div>
-        <div class="stage" id="two">
-            <span>
-              <label class="stageValue">8:01</label>
-            </span>
-            <p class="stageFont">Setting Up</p>
-        </div>
-        <div class="stage" id="three">
-            <span>
-              <label class="stageValue">8:26</label>
-            </span>
-            <p class="stageFont">Ready for QC</p>
-        </div>
-        <div class="stage" id="four">
-            <span>
-              <label class="stageValue"></label>
-            </span>
-            <p class="stageFont">QC Processing</p>
-        </div>
-        <div class="stage" id="five">
-            <span>
-              <label class="stageValue"></label>
-            </span>            
-            <p class="stageFont">Ready for Audit</p>
-        </div>
-        <div class="stage" id="six">
-            <span>
-              <label class="stageValue"></label>
-            </span>            
-            <p class="stageFont">Auditing</p>
-        </div>
-        <div class="stage" id="seven">
-            <span>
-              <label class="stageValue"></label>
-            </span>            
-            <p class="stageFont">Audit Complete</p>
-        </div>
-      </div>
-    <!--</div>-->
+<div *ngIf="timeline">    
+  <div class="timeline">
+
+  <div *ngFor="let element of timeline.elements" class="stage" [style.left]="element.position.left">
+    <span>
+      <label class="stageValue">{{element.moment.text}}</label>
+    </span>            
+    <p class="stageFont">{{element.moment.label}}</p>
   </div>
+<!--
+    <div class="stage" id="one">
+        <span>
+          <label class="stageValue">1:43</label>
+        </span>            
+        <p class="stageFont">Ready for Setup</p>                 
+    </div>
+    <div class="stage" id="two">
+        <span>
+          <label class="stageValue">8:01</label>
+        </span>
+        <p class="stageFont">Setting Up</p>
+    </div>
+    <div class="stage" id="three">
+        <span>
+          <label class="stageValue">8:26</label>
+        </span>
+        <p class="stageFont">Ready for QC</p>
+    </div>
+    <div class="stage" id="four">
+        <span>
+          <label class="stageValue"></label>
+        </span>
+        <p class="stageFont">QC Processing</p>
+    </div>
+    <div class="stage" id="five">
+        <span>
+          <label class="stageValue"></label>
+        </span>            
+        <p class="stageFont">Ready for Audit</p>
+    </div>
+    <div class="stage" id="six">
+        <span>
+          <label class="stageValue"></label>
+        </span>            
+        <p class="stageFont">Auditing</p>
+    </div>
+    <div class="stage" id="seven">
+        <span>
+          <label class="stageValue"></label>
+        </span>            
+        <p class="stageFont">Audit Complete</p>
+    </div>
+    -->
+  </div>    
+</div>
