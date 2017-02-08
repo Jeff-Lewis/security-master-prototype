@@ -1,6 +1,6 @@
 
 .timeline {
-  width: 98%;
+  width: 90%; 
   height: 10px;
   margin-top: 20px;
   background: -webkit-linear-gradient(left, green, green 33%, #d0cfcf 33%, #d0cfcf);
@@ -26,31 +26,31 @@ box-shadow: inset 0px 0px 0 5px rgba(63, 55, 57,0.1);
 }
 
 div.stage:nth-child(1) {
-  left: 8%;
+  left: 0;
   background-color: green;
 }
 div.stage:nth-child(2) {
-  left: 21%;
+  left: 14.285%;
   background-color: green;
 }
 div.stage:nth-child(3) {
-  left: 33%;
+  left: 28.57%;
   background-color: orange;
 }
 div:nth-child(4) {
-  left: 46%;
+  left: 42.856%;
   background-color: #d0cfcf;
 }
 div:nth-child(5) {
-  left: 59%;
+  left: 57.14%;
   background-color: #d0cfcf;
 }
 div:nth-child(6) {
-  left: 72%;
+  left: 71.42%;
   background-color: #d0cfcf;
 }
 div:nth-child(7) {
-  left: 85%;
+  left: 85.71%;
   background-color: #d0cfcf;
 }
 

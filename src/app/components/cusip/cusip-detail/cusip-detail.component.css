@@ -17,20 +17,16 @@ img {
   margin-bottom: 2px;
 }
 
-.component {
-    margin-top: 20px;
-}
+/*-- dropdown buttons --*/
 
 .dropdown-label {
     padding-left: 3px;
-    color:#666; 
+    color:rgb( 51, 51, 51); 
+    margin-bottom: 0;
 }
-
-
 
 .btn.outline {
 	background: none;
-	/*padding: 12px 22px;*/
 }
 
 .btn-primary.outline {
@@ -40,11 +36,35 @@ img {
 }
 
 .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
-	color: lightslategreyc;
-	border-color: lightslategrey;
+	background-color: lightgrey;
+    color: black;
+	border-color: black;
 }
 .btn-primary.outline:active, .btn-primary.outline.active {
-	border-color: lightslategrey;
-	color: lightslategrey;
+	border-color: black;
 	box-shadow: none;
+}
+
+/* -- end dropdown buttons --*/
+
+.checkbox-label {
+    font-weight: bold !important;
+}
+
+.control-label {
+    font-size: small;
+}
+
+.cusip-desc {
+    padding-left: 50px;
+    padding-right: 0;
+}
+
+.cusip1-desc {
+    padding-right: 32px !important;
+}
+
+h1.panel-title {
+    font-size: 36px;
+    text-align: center;
 }
