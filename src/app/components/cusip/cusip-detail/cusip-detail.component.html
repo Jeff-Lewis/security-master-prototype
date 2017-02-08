@@ -1,13 +1,13 @@
 <div *ngIf="cusip">
     <!--<button (click)="close()">Close</button>-->
     <div class="row">
-        <div class="col-md-8 col-md-offset-1">
+        <div class="col-md-8 add-margin">
             <app-timeline
                 [moments]="timelineMoments"
             >
             </app-timeline>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4" style="margin-right: -20px !important">
             <app-cusip-workflow-commands 
                 [workflow]="currentWorkflow"
                 (onSelect)="onSetupTransitionChange($event)">

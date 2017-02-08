@@ -2,6 +2,10 @@ div.row {
     margin-bottom: 20px;
 }
 
+.add-margin {
+    margin-left: 20px !important;
+}
+
 h1 {
     margin-top: 6px;
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
@@ -68,3 +72,4 @@ h1.panel-title {
     font-size: 36px;
     text-align: center;
 }
+

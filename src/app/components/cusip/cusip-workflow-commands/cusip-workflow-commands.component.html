@@ -1,21 +1,24 @@
-<div *ngIf="workflow">
-    <button
-        *ngIf="previous" 
-        type="button"
-        class="btn"
-        (click)="select(previous)"
-    >
-        {{previous.text}}
-    </button>
-    <button
-        *ngIf="next" 
-        type="button"
-        class="btn"
-        (click)="select(next)"
-    >
-        {{next.text}}
-    </button> 
-    <div>
-        Current Status: {{getCurrentStatusText()}}
+<div *ngIf="workflow">    
+    <div class="btn-group">
+        <button
+            *ngIf="previous" 
+            type="button"
+            id="previous-button"
+            class="btn btn-sm"
+            (click)="select(previous)"
+        >
+            {{previous.text}}
+        </button>
+        <button
+            *ngIf="next" 
+            type="button"
+            class="btn btn-sm btn-primary"
+            (click)="select(next)"
+        >
+            {{next.text}}
+        </button> 
     </div>
+    <!--<div>
+        Current Status: {{getCurrentStatusText()}}
+    </div>-->
 </div>

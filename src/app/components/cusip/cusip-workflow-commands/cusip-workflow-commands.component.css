@@ -1,0 +1,8 @@
+div.btn-group {
+    margin-top: 10px;
+}
+#previous-button {
+    font-weight: bold;
+    color: white;
+    background-color: darkred;
+}
