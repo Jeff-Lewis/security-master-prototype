@@ -1,46 +1,34 @@
 <div *ngIf="cusip">
-    <!--<button (click)="close()">Close</button>-->
-    <div class="row">
-        <div class="col-md-8 add-margin">
-            <app-timeline
-                [moments]="timelineMoments"
-            >
-            </app-timeline>
-        </div>
-        <div class="col-md-4" style="margin-right: -20px !important">
-            <app-cusip-workflow-commands 
-                [workflow]="currentWorkflow"
-                (onSelect)="onSetupTransitionChange($event)">
-            </app-cusip-workflow-commands>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6">
+                <app-timeline
+                    [moments]="timelineMoments"
+                >
+                </app-timeline>
+            </div>
+            <div class="col-md-6 pull-right">
+                <app-cusip-workflow-commands 
+                    [workflow]="currentWorkflow"
+                    (onSelect)="onSetupTransitionChange($event)">
+                </app-cusip-workflow-commands>
+            </div>
         </div>
     </div>
-    <!--<div class="row">
-        <div class="col-md-12 text-right">
-            <app-cusip-workflow-commands 
-                [workflow]="currentWorkflow"
-                (onSelect)="onSetupTransitionChange($event)">
-            </app-cusip-workflow-commands>
-        </div>
-    </div>-->
-    <div class="row">
-        <div class="col-md-6">
-            <div>
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#details" aria-controls="details" role="tab" data-toggle="tab">Details</a></li>
-            <li role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>
-            <li role="presentation"><a href="#artifacts" aria-controls="artifacts" role="tab" data-toggle="tab">Artifacts</a></li>
-            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-        </ul>
 
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="details">                
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="requestType" class="col-sm-2 control-label">Request Type</label>
-                        <div class="col-sm-10">
-                        <div class="btn-group">
+    <div class="row" id="panels-position">
+        <div class="col-md-6">                
+            <!-- DETAILS -->  
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Details
+                </div>
+                <div class="panel-body">			    
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="requestType" class="col-sm-4 control-label">Request Type</label>
+                            <div class="col-sm-8">
+                            <div class="btn-group">
                                     <button type="button" id="requestType" class="btn btn-sm btn-primary dropdown-toggle outline" 
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <img src="../../../../assets/img/Icon-Graph.png" alt="trading"/>
@@ -68,212 +56,11 @@
                                         </li>
                                     </ul>
                                 </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="securityType" class="col-sm-2 control-label">Security Type</label>
-                        <div class="col-sm-10">
-                            <div class="btn-group">
-                                <button type="button" id="securityType" class="btn btn-sm btn-primary dropdown-toggle outline" data-toggle="dropdown" 
-                                        aria-haspopup="true" aria-expanded="false">  
-                                    <img src="../../../../assets/img/stats-bars.png" alt="equity"/>                      
-                                    <label class="dropdown-label">
-                                        Equity
-                                    </label> 
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Equity<span class="pull-right"><img src="../../../../assets/img/stats-bars.png" alt="equity"/></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Muni<span class="pull-right"><img src="../../../../assets/img/ic_account_balance_black_36dp_2x.png" alt="muni"/></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Corp<span class="pull-right"><img src="../../../../assets/img/004-office.png" alt="corp"/></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">UIT<span class="pull-right"><img src="../../../../assets/img/ic_repeat_black_48dp_1x.png" alt="uit"/></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="" disabled> Trace/MSRB
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 cusip-desc">
-                            <input type="text" class="form-control" placeholder="Cusip Description"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-9">
-                            <button type="submit" class="btn btn-default btn-sm">Update</button>
-                        </div>
-                    </div>
-                </form>    
-            </div>
-            <div role="tabpanel" class="tab-pane" id="activity">
-                <app-activity></app-activity>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="artifacts">...</div>
-            <div role="tabpanel" class="tab-pane" id="settings">...</div>
-        </div>
-
-    </div>            
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="requestType" class="col-sm-4 control-label">Request Type</label>
-                    <div class="col-sm-8">
-                    <div class="btn-group">
-                            <button type="button" id="requestType" class="btn btn-sm btn-primary dropdown-toggle outline" 
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../../../../assets/img/Icon-Graph.png" alt="trading"/>
-                                <label class="dropdown-label"> 
-                                    Trade Related
-                                </label>
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Trade Related<span class="pull-right"><img src="../../../../assets/img/Icon-Graph.png" alt="trading"/></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Unclassified<span class="pull-right"><img src="../../../../assets/img/Icon-QuestionMark.png" alt="Unclassified"/></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Non-Trading<span class="pull-right"><img src="../../../../assets/img/Icon-MinusSign.png" alt="non-trading"/></span></a>
-                                </li>
-                                <li role="separator" class="divider"></li>
-                                <li>
-                                    <a href="#">Maintenance<span class="pull-right"><img src="../../../../assets/img/Icon-Maint.png" alt="non-trading"/></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Inquiry Only<span class="pull-right"><img src="../../../../assets/img/Icon-Mag.png" alt="non-trading"/></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="securityType" class="col-sm-4 control-label">Security Type</label>
-                    <div class="col-sm-8">
-                        <div class="btn-group">
-                            <button type="button" id="securityType" class="btn btn-sm btn-primary dropdown-toggle outline" data-toggle="dropdown" 
-                                    aria-haspopup="true" aria-expanded="false">  
-                                <img src="../../../../assets/img/stats-bars.png" alt="equity"/>                      
-                                <label class="dropdown-label">
-                                    Equity
-                                </label> 
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Equity<span class="pull-right"><img src="../../../../assets/img/stats-bars.png" alt="equity"/></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Muni<span class="pull-right"><img src="../../../../assets/img/ic_account_balance_black_36dp_2x.png" alt="muni"/></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Corp<span class="pull-right"><img src="../../../../assets/img/004-office.png" alt="corp"/></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">UIT<span class="pull-right"><img src="../../../../assets/img/ic_repeat_black_48dp_1x.png" alt="uit"/></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="" disabled/> Trace/MSRB
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-1 col-sm-8 cusip1-desc">
-                        <input type="text" class="form-control" placeholder="Cusip Description"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-6 col-sm-6">
-                        <button type="submit" class="btn btn-default btn-sm">Update</button>
-                    </div>
-                </div>
-            </form> 
-            <app-activity></app-activity>
-        </div>
-        <div class="col-md-6">
-            <app-email></app-email>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h1 class="panel-title">{{cusip.name}}</h1>
-            <h4>Elapsed Time: MM:SS</h4>
-        </div>
-        <div class="panel-body">
-       
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#details1" aria-controls="details1" role="tab" data-toggle="tab">Details</a></li>
-                <li role="presentation"><a href="#activity1" aria-controls="activity1" role="tab" data-toggle="tab">Activity</a></li>
-                <li role="presentation"><a href="#artifacts1" aria-controls="artifacts1" role="tab" data-toggle="tab">Artifacts</a></li>
-                <li role="presentation"><a href="#settings1" aria-controls="settings1" role="tab" data-toggle="tab">Settings</a></li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="details1">                
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <label for="requestType" class="col-sm-2 control-label">Request Type</label>
-                            <div class="col-sm-10">
-                            <div class="btn-group">
-                                        <button type="button" id="requestType" class="btn btn-sm btn-primary dropdown-toggle outline" 
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="../../../../assets/img/Icon-Graph.png" alt="trading"/>
-                                            <label class="dropdown-label"> 
-                                                Trade Related
-                                            </label>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="#">Trade Related<span class="pull-right"><img src="../../../../assets/img/Icon-Graph.png" alt="trading"/></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Unclassified<span class="pull-right"><img src="../../../../assets/img/Icon-QuestionMark.png" alt="Unclassified"/></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Non-Trading<span class="pull-right"><img src="../../../../assets/img/Icon-MinusSign.png" alt="non-trading"/></span></a>
-                                            </li>
-                                            <li role="separator" class="divider"></li>
-                                            <li>
-                                                <a href="#">Maintenance<span class="pull-right"><img src="../../../../assets/img/Icon-Maint.png" alt="non-trading"/></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Inquiry Only<span class="pull-right"><img src="../../../../assets/img/Icon-Mag.png" alt="non-trading"/></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="securityType" class="col-sm-2 control-label">Security Type</label>
-                            <div class="col-sm-10">
+                            <label for="securityType" class="col-sm-4 control-label">Security Type</label>
+                            <div class="col-sm-8">
                                 <div class="btn-group">
                                     <button type="button" id="securityType" class="btn btn-sm btn-primary dropdown-toggle outline" data-toggle="dropdown" 
                                             aria-haspopup="true" aria-expanded="false">  
@@ -304,32 +91,46 @@
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="" disabled> Trace/MSRB
+                                        <input type="checkbox" value="" disabled/> Trace/MSRB
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-4 cusip-desc">
+                            <div class="col-sm-offset-1 col-sm-8 cusip1-desc">
                                 <input type="text" class="form-control" placeholder="Cusip Description"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-9">
+                            <div class="col-sm-offset-6 col-sm-6">
                                 <button type="submit" class="btn btn-default btn-sm">Update</button>
                             </div>
                         </div>
-                    </form>    
+                    </form>                 
                 </div>
-                <div role="tabpanel" class="tab-pane" id="activity1">
-                    <app-activity></app-activity>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="artifacts1">...</div>
-                <div role="tabpanel" class="tab-pane" id="settings1">...</div>
             </div>
-
         </div>
-    </div>
-    </div>
-
+        <div class="col-md-6">
+            <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>
+                    <li role="presentation"><a href="#email" aria-controls="email" role="tab" data-toggle="tab">Email</a></li>
+                    <li role="presentation"><a href="#screenshots" aria-controls="screenshots" role="tab" data-toggle="tab">Screenshots</a></li>
+                    <li role="presentation"><a href="#files" aria-controls="files" role="tab" data-toggle="tab">Files</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="activity"> 
+                        <app-activity></app-activity>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="email">
+                        <app-email></app-email>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="screenshots">...</div>
+                    <div role="tabpanel" class="tab-pane" id="files">...</div>
+                </div>
+            </div>  
+        </div>    
+    </div>   
 </div>

@@ -2,13 +2,13 @@ div.row {
     margin-bottom: 20px;
 }
 
-.add-margin {
-    margin-left: 20px !important;
-}
-
 h1 {
     margin-top: 6px;
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+}
+
+#panels-position {
+    margin-top: 50px;
 }
 
 h4 {
