@@ -56,13 +56,9 @@ export class CusipDetailComponent implements OnInit {
     this.onClose.emit();
   }
 
-  getCurrentWorkflow(): SetupTransitionWorkflow {
-    return  CusipHelper.getCurrentWorkflow(this.cusip, this.workflows);
-  }
-
   onSetupTransitionChange(transition:SetupTransition) {
     this.cusipService.addTransition(this.cusip, transition).then(cusip => {
-      this.cusip = cusip;
+      this.setCusip(cusip);
     });
   }
 
@@ -74,5 +70,6 @@ export class CusipDetailComponent implements OnInit {
 
   private setCusip(cusip: Cusip) {
     this.cusip = cusip;
+    this.currentWorkflow = CusipHelper.getCurrentWorkflow(this.cusip, this.workflows);
   }
 }

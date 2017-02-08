@@ -18,8 +18,11 @@ export class CusipWorkflowCommandsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.previous = this.workflow.previous;
-    this.next = this.workflow.next;
+    this.setCommands();
+  }
+
+  ngOnChanges() {
+    this.setCommands();
   }
 
   getCurrentStatusText() : string {
@@ -29,5 +32,10 @@ export class CusipWorkflowCommandsComponent implements OnInit {
 
   select(transition: SetupTransition) {
     this.onSelect.emit(transition);
+  }
+
+  private setCommands() {
+    this.previous = this.workflow.previous;
+    this.next = this.workflow.next;
   }
 }
