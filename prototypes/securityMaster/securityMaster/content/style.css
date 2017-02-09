@@ -74,7 +74,7 @@ background: linear-gradient(to right, rgba(252,236,252,1) 0%, rgba(251,166,225,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8', GradientType=1 );*/
 }
 
-div.stage {
+/*div.stage {
   z-index: 99;
   transition : 0.3s ease-in-out;
   width: 80px;
@@ -120,17 +120,15 @@ div:nth-child(7) {
 
 #title1, #title2, #title3, #title4, #title5, #title6, #title7 {
   margin-top: -20px;
-}
+}*/
 
-span {
+/*span {
   display: inline-block;
   margin-top: 6px;
   width: 66px;
   height: 66px;
-  /*background-color: #fff;*/
   position: relative;
   border-radius: 50%;
-  /*box-shadow: 0 0 5px rgba(0,0,0,0.2);*/
   border-color: rgba(63, 55, 57, 0.5);;
   -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
@@ -144,8 +142,7 @@ stageValue {
   position: relative;
   top: -68%;
   text-align: center;
-}
-
+}*/
 
 .checkbox-label {
     font-weight: bold !important;
@@ -154,7 +151,6 @@ stageValue {
 .control-label {
     font-size: small;
 }
-
 
 /*-- dropdown buttons --*/
 

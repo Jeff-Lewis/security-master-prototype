@@ -1,6 +1,6 @@
-div.row {
+/*div.row {
     margin-bottom: 20px;
-}
+}*/
 
 h1 {
     margin-top: 6px;
@@ -8,7 +8,7 @@ h1 {
 }
 
 #panels-position {
-    margin-top: 50px;
+    margin-top: 66px;
 }
 
 h4 {
@@ -73,3 +73,27 @@ h1.panel-title {
     text-align: center;
 }
 
+  /* tab color */
+.nav-tabs>li>a {
+    color: #000;
+    background-color: #d9edf7;
+    border-color: lightskyblue;
+}
+
+/* active tab color */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+/* hover tab color */
+.nav-tabs>li>a:hover {
+  background-color: lightskyblue;
+  border-color: lightblue;
+}
+
+.tab-content{  
+  border: 1px solid #337ab7;
+  border-radius: 0 3px 3px 3px;
+}

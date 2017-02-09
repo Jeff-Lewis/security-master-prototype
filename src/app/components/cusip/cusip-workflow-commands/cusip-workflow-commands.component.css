@@ -6,3 +6,7 @@ div.btn-group {
     color: white;
     background-color: darkred;
 }
+
+#primary-button {
+    margin-left: 150px !important;
+}

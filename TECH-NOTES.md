@@ -51,11 +51,12 @@
 
 ### Design ##########################################################
 * Cusip Details
-    * Add Entry details Rows 
-    * Style Cusip Identification Rows
-    ~~* Add Timeline (dennis)*~~
-    * Add Images
-* Add Images to project
+    ~~* Add Entry details Rows (dennis) *~~
+    ~~* Style Cusip Identification Rows (dennis) *~~
+    ~~* Add Timeline (dennis) *~~
+    ~~* Add Images (dennis) *~~
+~~* Add Images to project *~~
+* TODO: ADD MORE TASKS (I want to go home!)
 ### Research ########################################################
 *   [Make partials work](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html)
  

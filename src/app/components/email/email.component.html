@@ -1,63 +1,54 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">
-      Email
-      <i class="glyphicon glyphicon-envelope pull-right"></i>
+      <i class="glyphicon glyphicon-envelope"></i>
+      <span id="emailId" style="padding-left: 10px;"><a>0001-01-06</a></span>
+      <div class="form-inline pull-right">
+        <span><i><b>Received:</b></i></span>
+        <span id="dateReceived"><i>1/6/2017 2:47pm</i></span>
+      </div>
     </h3>
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-xs-12">
         <div class="form-inline">
-          <!--<label>Received:</label>-->
-          <label class="pull-right contents">MM/DD/YYYY HH:MM:SS</label>
-        </div>
-        <div class="form-inline">
-          <label>Received From:</label>
-          <label class="pull-right contents">name@email.com</label>
-        </div>
-        <div class="form-inline">
-          <label>Subject:</label>
-          <label class="pull-right contents">subject of email</label>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-inline">
-          <label>Requestor:</label>
-          <label class="pull-right contents">Common Name</label>
-        </div>
-        <div class="form-inline">
-          <label>Email:</label>
-          <label class="pull-right contents">name@email.com</label>
-        </div>
-        <div class="form-inline">
-          <label>Phone:</label>
-          <label class="pull-right contents">(123) 456-7890</label>
+          <span><b>Subject:</b></span>
+          <span id="subject">subject of email</span>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 form-inline">
-        <label>Email saved:</label>
-        <label>
-          <a>[RequestId]-[Requester]-[Cusip(s)]</a>
-        </label>
+      <div class="col-xs-12">        
+        <div class="form-inline">
+          <span><b>From:</b></span>
+          <span id="from">Office of Submission</span>
+          <span id="emailAddress">[<a>user@test.com</a>]</span>
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 form-inline">
-        <label>Cusip(s) from email:</label>
-        <label>
-          <a>XXXXXXXX1</a>  
-          <a>XXXXXXXX2</a>  
-          <a>XXXXXXXX3</a>
-        </label>
+      <div class="col-xs-12">
+        <span><b>Phone:</b> </span>
+        <span id="phone">(123) 456-7890</span>
       </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-xs-12">
+        <span>Additional Cusip(s) from email:</span>
+        <!--<div class="col-xs-4 col-xs-offset-1">-->
+          <ol>
+            <li><a href="#">123456AB1</a></li>
+            <li><a href="#">123456BC1</a></li>
+            <li><a href="#">123456CD1</a></li>
+          </ol>
+        </div>
+      <!--</div>-->
     </div>
     <div class="panel panel-default">
       <table class="table table-bordered">
         <tr>
-          <th>Attachment</th>
+          <th>Attachments</th>
           <th>Location</th>
         </tr>
         <tr>
@@ -69,7 +60,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="panel panel-default">
-          <div class="panel-heading">Body</div>
+          <div class="panel-heading"><b>Body</b></div>
           <div class="panel-body">
             <p>Panel content</p>
           </div>
