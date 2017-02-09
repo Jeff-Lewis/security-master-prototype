@@ -37,7 +37,7 @@ img {
 }*/
 
 div {
-  background-color: dodgerblue;
+  background-color: white;
 }
 /* timeline 1 */
 .timeline-container {
@@ -145,3 +145,43 @@ stageValue {
   top: -68%;
   text-align: center;
 }
+
+
+.checkbox-label {
+    font-weight: bold !important;
+}
+
+.control-label {
+    font-size: small;
+}
+
+
+/*-- dropdown buttons --*/
+
+.dropdown-label {
+    padding-left: 3px;
+    color:rgb( 51, 51, 51); 
+    margin-bottom: 0;
+}
+
+.btn.outline {
+	background: none;
+}
+
+.btn-primary.outline {
+	border: 1px solid lightslategrey;
+    border-radius: 3px;
+	color: lightslategrey;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+	background-color: lightgrey;
+    color: black;
+	border-color: black;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+	border-color: black;
+	box-shadow: none;
+}
+
+/* -- end dropdown buttons --*/
