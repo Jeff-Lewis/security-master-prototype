@@ -19,6 +19,8 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { WorkInProgressComponent } from './components/work-in-progress/work-in-progress.component';
 
+import { SafePipe } from './pipes/safe.pipe';
+
 import { CusipService } from './services/cusip.service';
 import { HttpApiService } from './services/http-api.service';
 import { WorkInProgressService } from './services/work-in-progress.service';
@@ -43,6 +45,8 @@ import { WorkflowService } from './services/workflow.service';
     EmailComponent,
     TimelineComponent,
     CusipWorkflowCommandsComponent,
+
+    SafePipe
   ],
   
   providers: [

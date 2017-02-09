@@ -1,6 +1,13 @@
 <div *ngIf="timeline">    
-  <div class="timeline">
-    <div *ngFor="let element of timeline.elements" [ngClass]="['stage', element.moment.getStateName()]" [style.left]="element.position.left">
+  <div 
+    class="timeline"
+    [style.background]="'-webkit-linear-gradient(left, green, green ' + timeline.completePercent + '%, #d0cfcf ' + timeline.completePercent + '%, #d0cfcf)' | safe:'style'"
+  >
+    <div 
+      *ngFor="let element of timeline.elements" 
+      [ngClass]="['stage', element.moment.getStateName()]" 
+      [style.left]="element.position.left + '%'"      
+    >
       <span>
         <label class="stageValue">{{element.moment.text}}</label>
       </span>            
