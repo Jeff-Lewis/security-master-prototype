@@ -50,7 +50,19 @@ span {
   box-shadow: -1px -1px 28px -1px rgba(50, 50, 50, 0.5);
 }
 
-div.stage {
+div.active {
+  background-color: orange;
+}
+
+div.complete {
+  background-color: green;
+}
+
+div.danger {
+  background-color: red;
+}
+
+div.disabled {
   background-color: #d0cfcf;
 }
 

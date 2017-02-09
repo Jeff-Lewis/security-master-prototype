@@ -22,7 +22,7 @@ export class Timeline {
     }
 }
 
-enum TimelineMomentState {
+export enum TimelineMomentState {
     active,
     complete,
     danger,
@@ -33,6 +33,10 @@ export class TimelineMoment {
     label: string;
     text: string;
     state: TimelineMomentState;
+
+    getStateName(): string {
+        return TimelineMomentState[this.state];
+    }
 }
 
 export class TimelineElement {
