@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LogHelper } from '../../helpers/log.helper';
 import { Timeline, TimelineElement, TimelineMoment } from '../../models/timeline-models';
 
 @Component({
@@ -18,7 +19,7 @@ export class TimelineComponent implements OnInit {
     this.loadMoments();
   }
 
-  ngOnChange() {
+  ngOnChanges() {
     this.loadMoments();
   }
 
