@@ -3,6 +3,8 @@ export class SetupTransition {
     id:         number;
     name:       string;
     text:       string;
+
+    isStart:    boolean;
 }
 
 export class SetupTransitionWorkflow {

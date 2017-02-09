@@ -44,14 +44,14 @@ export class InMemoryDataService implements InMemoryDbService {
   private getSetupTransitions(): SetupTransition[] {
     let output = [];
     let names = [
-      {name: 'Ready For Setup', text: 'Ready For Setup'}, 
-      {name: 'Needs Rework', text: 'Needs Rework'}, 
-      {name: 'Setup In Progress', text: 'Begin Setup'}, 
-      {name: 'Ready For QC', text: 'Setup Finished'}, 
-      {name: 'QC In Progress', text: 'Begin QC'}, 
-      {name: 'Ready For Audit', text: 'QC Finished'}, 
-      {name: 'Audit In Progress', text: 'Begin Audit'}, 
-      {name: 'Done', text: 'Audit Complete'}
+      { name: 'Ready For Setup', text: 'Ready For Setup', isStart: true }, 
+      { name: 'Needs Rework', text: 'Needs Rework', isStart: true }, 
+      { name: 'Setup In Progress', text: 'Begin Setup', isStart: false }, 
+      { name: 'Ready For QC', text: 'Setup Complete', isStart: false }, 
+      { name: 'QC In Progress', text: 'Begin QC', isStart: false }, 
+      { name: 'Ready For Audit', text: 'QC Complete', isStart: false }, 
+      { name: 'Audit In Progress', text: 'Begin Audit', isStart: false }, 
+      { name: 'Done', text: 'Audit Complete', isStart: false }
     ];
 
     for (let i=0; i<names.length; i++) {
