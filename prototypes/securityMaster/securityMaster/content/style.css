@@ -181,3 +181,52 @@ stageValue {
 }
 
 /* -- end dropdown buttons --*/
+
+/* card */
+.col-md-2 {
+  padding: 0px !important;
+}
+.card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card {
+  /*box-sizing: border-box;*/
+  border-radius: 2px;
+  /*background-clip: padding-box;*/
+  padding: 4px;
+}
+
+.card .card-content {
+  margin: 0;
+  padding: 2px 4px 2px 4px;
+  line-height: 24px;
+  border-left: 1px solid #d9edf7;
+  border-right: 1px solid #d9edf7;
+  /*border-radius: 0 0 2px 2px;*/
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+
+span.icons {
+  padding: 0 5px 0 5px;
+}
+.card .card-action {
+  /*margin-top: 3px;*/
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 1px;
+  background-color: #d9edf7;
+}
+.card .card-action a {
+  color: #ffab40;
+  margin-right: 16px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+.card .card-action a:hover {
+  color: #ffd8a6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* end card */
