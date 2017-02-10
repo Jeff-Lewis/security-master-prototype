@@ -4,7 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background: lightskyblue;
+    background: #d9edf7;;
 
     width: 900px;
     max-width: 100%;
@@ -15,7 +15,7 @@
     z-index: 1010;
 
     display: block;  
-    border: 5px solid darkblue;
+    border: 5px solid #337ab7;
     border-radius: 8px;
 }
 
@@ -62,7 +62,7 @@ h3 {
 
 #elapsedTimeAlert {
     width: 100%;
-    margin-top: -10px;
+    margin-top: 0;
     padding-left: 10px;
     color: white;
     background-color: firebrick;

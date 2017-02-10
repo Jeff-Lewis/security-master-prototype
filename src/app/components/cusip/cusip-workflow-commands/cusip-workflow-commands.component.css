@@ -7,6 +7,13 @@ div.btn-group {
     background-color: darkred;
 }
 
-#primary-button {
-    margin-left: 150px !important;
+#previous-button:hover {
+    font-weight: bold;
+    color: darkred;
+    background-color: white;
+    border: solid 1px darkred;
+    border-radius: 3px 0 0 5px;
 }
+/*#primary-button {
+    margin-left: 150px !important;
+}*/

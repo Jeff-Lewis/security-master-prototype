@@ -1,14 +1,17 @@
-/*div.row {
-    margin-bottom: 20px;
-}*/
+.col-xs-5 {
+    padding-right: 5px;
+}
 
-h1 {
-    margin-top: 6px;
-    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+.col-xs-7 {
+    padding-left: 10px;
 }
 
 #panels-position {
     margin-top: 66px;
+}
+
+div.timeline-position {
+    margin-left: 40px;
 }
 
 h4 {

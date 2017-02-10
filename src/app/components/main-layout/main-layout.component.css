@@ -1,5 +1,5 @@
 nav {
-    background-color: lightblue;
+    background-color: #d9edf7;;
 }
 .page-header {
     margin-bottom: 5px;
@@ -12,7 +12,7 @@ footer {
   height: 60px;
   color: #999;
   text-align: center;
-  background-color: lightblue;
+  background-color: #d9edf7;;
   border-top: 1px solid #e5e5e5;
   padding: 20px 0;
 }
