@@ -5,14 +5,20 @@ nav {
     margin-bottom: 5px;
 }
 
-.crc-footer {
-  padding: 20px 0;
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
   color: #999;
   text-align: center;
-  background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5
+  background-color: lightblue;
+  border-top: 1px solid #e5e5e5;
+  padding: 20px 0;
 }
 
-p.top-position {
-  padding-right: 40px;
+.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
 }
