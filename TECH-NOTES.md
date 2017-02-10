@@ -55,17 +55,22 @@
     ~~* Style Cusip Identification Rows (dennis) *~~
     ~~* Add Timeline (dennis) *~~
     ~~* Add Images (dennis) *~~
-    * Add close button "X" to header
-    * DESC Screenshot for Screenshots Tab
+    ~~* Add close button "X" to header *~~
+    * Format header Cusip
+    * DESC Screenshot for Screenshots Tab 
+        * Jumbotron on click?
     * Format Stage Buttons
     * Change width of Security Type Dropdown Button
     * Change width of Security Input
     * Talk with Jake about additional Description fields (3) on demand
 
 * Cusip Card
-    * Add Elapsed Time
-    * Add Time Submitted
-    * Add Icons for Security Type, Request Type,  
+    ~~* Add Elapsed Time *~~
+    ~~* Add Time Submitted *~~
+    * Add Icons for Security Type, Request Type, Source
+    * Discuss width with Jake
+    * Discuss additional elements with Jake and Dropdown
+    * Color? 
 ~~* Add Images to project *~~
 * TODO: ADD MORE TASKS (I want to go home!)
 ### Research ########################################################
