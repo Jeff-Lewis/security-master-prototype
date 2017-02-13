@@ -19,6 +19,31 @@
     border-radius: 5px;
 }
 
+.modal-cusip {
+    margin-left: 30px; 
+    margin-right: 30px; 
+    margin-top: 14px;
+    font-size: xx-large;
+}
+
+.modal-elapsed {
+    font-size: large; 
+    color: darkred;
+}
+
+.modal-close {
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+#elapsedTimeAlert {
+    width: 100%;
+    margin-top: 2px;
+    padding-left: 10px;
+    color: white;
+    background-color: firebrick;
+}
+
 .modal-body {
     position: absolute;
     top: 68px;
@@ -45,22 +70,4 @@
 
     background: rgba(0, 0, 0, 0.5);
     overflow: hidden;
-}
-
-h2 {
-    display: inline-block;
-    margin: 10px 15px 0 10px;    
-}
-
-h3 {
-    margin-top: 14px;
-    margin-right: 10px;
-}
-
-#elapsedTimeAlert {
-    width: 100%;
-    margin-top: 0;
-    padding-left: 10px;
-    color: white;
-    background-color: firebrick;
 }
