@@ -1,6 +1,7 @@
 div.btn-group {
     margin-top: 10px;
 }
+
 #previous-button {
     font-weight: bold;
     color: white;
@@ -14,6 +15,3 @@ div.btn-group {
     border: solid 1px darkred;
     border-radius: 3px 0 0 5px;
 }
-/*#primary-button {
-    margin-left: 150px !important;
-}*/

@@ -122,39 +122,37 @@
                         <div class="col-xs-12">
                             <input type="text" class="form-control" id="description1"/>
                         </div>
-                    </div>
+                    </div>                    
                     <div class="row">
                         <div class="col-xs-2 text-center">
-                            <h6>Alpha1</h6>
+                            <p class="position">Alpha1</p>
+                            <div class="text-center">                                
+                                <input type="text" class="form-control input-sm" id="alpha1"/>
+                            </div>
                         </div>
                         <div class="col-xs-2 text-center">
-                            <h6>Alpha2</h6>
+                            <p class="position">Alpha2</p>
+                            <div>
+                                <input type="text" class="form-control input-sm" id="alpha2"/>
+                            </div>
                         </div> 
                         <div class="col-xs-2 text-center">
-                            <h6>Alpha3</h6>
+                            <p class="position">Alpha3</p>
+                            <div>
+                                <input type="text" class="form-control input-sm" id="alpha3"/>
+                            </div>
                         </div> 
                         <div class="col-xs-2 text-center">
-                            <h6>Alpha4</h6>
+                            <p class="position">Alpha4</p>
+                            <div>
+                                <input type="text" class="form-control input-sm" id="alpha4"/>
+                            </div>
                         </div>
                         <div class="col-xs-2 text-center">
-                            <h6>Alpha5</h6>
-                        </div> 
-                    </div>
-                    <div class="row"> 
-                        <div class="col-xs-2">
-                            <input type="text" class="form-control" id="alpha1"/>
-                        </div>
-                        <div class="col-xs-2">
-                            <input type="text" class="form-control" id="alpha2"/>
-                        </div> 
-                        <div class="col-xs-2">
-                            <input type="text" class="form-control" id="alpha3"/>
-                        </div> 
-                        <div class="col-xs-2">
-                            <input type="text" class="form-control" id="alpha4"/>
-                        </div>
-                        <div class="col-xs-2">
-                            <input type="text" class="form-control" id="alpha5"/>
+                            <p class="position">Alpha5</p>
+                            <div>
+                                <input type="text" class="form-control input-sm" id="alpha5"/>
+                            </div>
                         </div> 
                     </div>
                 </div>
@@ -172,9 +170,6 @@
                 </div>
             </div>
         </div>
-
-
-
         <div class="col-xs-7">
             <div>
                 <!-- Nav tabs -->
@@ -192,10 +187,42 @@
                     <div role="tabpanel" class="tab-pane" id="email">
                         <app-email></app-email>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="screenshots">...</div>
+                    <div role="tabpanel" class="tab-pane" id="screenshots">
+                        <div id="carousel-beta" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators" style="margin-bottom: 0; color: yellow;">
+                                <li data-target="#carousel-beta" data-slide-to="1"></li>
+                                <li data-target="#carousel-beta" data-slide-to="0" class="active"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="../../../../assets/img/BETA_DESC_Screen2.jpg" alt="beta1" style="width: 500px; height: 350px; padding: 3px;">
+                                    <!--<div class="carousel-caption">
+                                        <h6>BETA DESC</h6>
+                                    </div>-->
+                                </div>
+                                <div class="item">
+                                    <img src="../../../../assets/img/BETA_DESC_Screen.jpg" alt="..." style="width: 500px; height: 350px; padding: 3px;">
+                                    <!--<div class="carousel-caption">
+                                        ...
+                                    </div>-->
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <!--<a class="left carousel-control" href="#carousel-beta" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-beta" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </a>-->
+                        </div> 
+                    </div>
                     <div role="tabpanel" class="tab-pane" id="files">...</div>
                 </div>
-            </div>  
+            </div>
         </div>    
     </div>   
 </div>

@@ -19,9 +19,14 @@ h4 {
 }
 
 img {
-  width: 16px;
-  height: 16px;
-  margin-bottom: 2px;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 2px;
+}
+
+p.position { 
+    margin-bottom: 0;
+    padding-top: 8px;
 }
 
 /*-- dropdown buttons --*/
@@ -92,11 +97,21 @@ h1.panel-title {
 
 /* hover tab color */
 .nav-tabs>li>a:hover {
-  background-color: lightskyblue;
-  border-color: lightblue;
+    background-color: lightskyblue;
+    border-color: lightblue;
 }
 
 .tab-content{  
-  border: 1px solid #337ab7;
-  border-radius: 0 3px 3px 3px;
+    border: 1px solid #337ab7;
+    border-radius: 0 3px 3px 3px;
+}
+
+.carousel-indicators .active {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 1px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: yellow;
 }
