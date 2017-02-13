@@ -25,6 +25,7 @@ import { CusipService } from './services/cusip.service';
 import { HttpApiService } from './services/http-api.service';
 import { WorkInProgressService } from './services/work-in-progress.service';
 import { WorkflowService } from './services/workflow.service';
+import { FilesComponent } from './components/files/files.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,9 @@ import { WorkflowService } from './services/workflow.service';
     TimelineComponent,
     CusipWorkflowCommandsComponent,
 
-    SafePipe
+    SafePipe,
+
+    FilesComponent
   ],
   
   providers: [

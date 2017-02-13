@@ -1,6 +1,7 @@
 import { SetupTransition, SetupTransitionWorkflow } from './setup-transition-models';
 import { Activity } from './activity';
 import { Email } from './email';
+import { Files } from './files';
 
 export class Cusip {
     // SERVER DATA **************************************
