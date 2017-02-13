@@ -6,16 +6,12 @@
     padding-left: 10px;
 }
 
-#panels-position {
+#panel-margin {
     margin-top: 66px;
 }
 
 div.timeline-position {
     margin-left: 40px;
-}
-
-h4 {
-    color: #ff0000;
 }
 
 img {
@@ -63,25 +59,7 @@ p.position {
     font-weight: bold !important;
 }
 
-.control-label {
-    font-size: small;
-}
-
-.cusip-desc {
-    padding-left: 50px;
-    padding-right: 0;
-}
-
-.cusip1-desc {
-    padding-right: 32px !important;
-}
-
-h1.panel-title {
-    font-size: 36px;
-    text-align: center;
-}
-
-  /* tab color */
+/* tab color */
 .nav-tabs>li>a {
     color: #000;
     background-color: #d9edf7;
