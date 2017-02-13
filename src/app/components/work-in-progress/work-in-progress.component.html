@@ -15,20 +15,17 @@
 
 <div *ngIf="selectedCusip">
   <div class="modal">
-    <div style="width: 100%; height: 60px; font-size: xx-large;">
+    <div style="width: 100%; height: 46px; font-size: xx-large;">
       <span class="text-uppercase">{{selectedCusip.name}}</span>
       <span style="margin-left: 10px;">Elapsed:</span>
       <span>7:38</span>
-
-        <!--<h3 class="pull-right" style="margin-top: 4px; margin-left: 30px;">Elapsed: 
-          <h3  class="pull-right" style="margin-top: 1px; margin-left: 3px;">7:38</h3>
-        </h3>-->
-        <button type="button" class="close pull-right" style="padding-right: 10px;" aria-label="Close" (click)="closeSelectedCusipDetail()" >
-            <span style="vertical-align: top;" aria-hidden="true">&times;</span>
-        </button>
-      <!--</h2> -->
+      <button type="button" class="close pull-right" style="padding-right: 10px;" aria-label="Close" (click)="closeSelectedCusipDetail()" >
+          <span style="vertical-align: top;" aria-hidden="true">&times;</span>
+      </button>
     </div>
+
     <div id="elapsedTimeAlert">This is an alert.</div>
+
     <div class="modal-body">
       <app-cusip-detail
         [cusipId] = "selectedCusip.id"
