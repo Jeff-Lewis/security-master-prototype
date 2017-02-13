@@ -1,38 +1,44 @@
-<!--<section class="cusip-card-container">
-  <h5>
-    <a (click)="showDetail()">{{cusip.name}}</a>
-    <span>Muni</span>
-  </h5>
-  <h6>Trade Related | 
-    <span>Added: {{getAddedDateString()}}</span>
-  </h6>
-</section>-->
-
 <div class="container">
-    <div class="row" style="width: 100%;">
-        spacer for design purposes
-    </div>
     <div class="row">
         <!-- Cards -->
-        <div class="col-md-2 col-md-offset-3">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-action">
-                    <!--<a (click)="showDetail()">{{cusip.name}}</a>-->
-                    <span style="font-size: medium; font-weight: bold; padding-left:5px;">123456XS8</span>
+                    <span style="font-size: medium; font-weight: bold; padding-left:5px;">
+                      <a (click)="showDetail()">{{cusip.name}}</a>
+                      <span class="icons">
+                        <img src="../../../../assets/img/Icon-Graph.png" alt="trading" title="Trade Related"/>  
+                      </span>
+                      <span class="icons">
+                        <img src="../../../../assets/img/stats-bars.png" alt="equity" title="Equity"/>
+                      </span>
+                      <span class="icons">
+                        <i class="glyphicon glyphicon-envelope" title="Email"></i>
+                      </span>
+                    </span>
                     <button type="button" class="close" aria-label="Close">
                         <span style="vertical-align: top;" aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="card-content">
-                    <div class="text-center">
-                        <span class="icons">ICON</span><span class="icons">ICON</span><span class="icons">ICON</span><span class="icons">ICON</span>
-                    </div>
+                    <!--<div class="text-center">
+                        <span class="icons">
+                          <img src="../../../../assets/img/Icon-Graph.png" alt="trading" title="Trade Related"/>  
+                        </span>
+                        <span class="icons">
+                          <img src="../../../../assets/img/stats-bars.png" alt="equity" title="Equity"/>
+                        </span>
+                        <span class="icons">
+                          <i class="glyphicon glyphicon-envelope" title="Email"></i>
+                        </span>
+                    </div>-->
                     <div>
                         <table>
                             <tr>
                                 <td style="padding-left:5px;">Submitted:</td>
-                                <td id="timeSubmitted" style="padding-left:10px;">8:52</td>
-                                <!--<span id="timeSubmitted">{{getAddedDateString()}}</span>-->
+                                <td id="timeSubmitted" style="padding-left:10px;">
+                                  <span id="timeSubmitted">{{getAddedDateString()}}</span>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="padding-left:5px;">Elapsed:</td>

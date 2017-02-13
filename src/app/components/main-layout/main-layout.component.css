@@ -9,7 +9,8 @@ nav {
 footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    /*right: 20%;
+    left: 20%;    */
     height: 60px;
     color: #999;
     text-align: center;
@@ -19,7 +20,7 @@ footer {
 }
 
 .container {
-    width: auto;
-    max-width: 680px;
+    /*width: auto;
+    max-width: 680px;*/
     padding: 0 15px;
 }

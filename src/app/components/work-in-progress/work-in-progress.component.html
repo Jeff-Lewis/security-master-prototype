@@ -1,9 +1,10 @@
-<div>
+<div class="container">
   <label>Add Cusip:</label> <input #newSetupRequest placeholder="Cusip"/>
   <button (click)="addCusip(newSetupRequest.value); newSetupRequest.value=''">
     Add
   </button>
 </div>
+
 
 <div *ngIf="wip && wip.cusips">
   <app-cusip-card 

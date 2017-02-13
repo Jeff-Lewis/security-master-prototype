@@ -1,36 +1,44 @@
-<div class="page-header2">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" routerLink="/home">Security Master</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="page-header2">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" routerLink="/home">Security Master</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li role="presentation" routerLinkActive="active"><a routerLink="/home">Home</a></li>
+              <li role="presentation" routerLinkActive="active"><a routerLink="/wip">Work In Progress</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" role="button">Settings <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <li><a href="#">User</a></li>
+                  <li><a href="#">System (admin only)</a></li>
+                </ul>
+              </li>        
+              <li role="presentation" routerLinkActive="active"><a routerLink="/details">Add New</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+              <div class="form-group">
+                <input class="form-control input-sm" type="text" placeholder="Search Cusip">
+              </div>
+              <button type="submit" class="btn btn-sm btn-default">Search</button>
+            </form>
+          </div>
+        </nav>
       </div>
-      <ul class="nav navbar-nav">
-        <li role="presentation" routerLinkActive="active"><a routerLink="/home">Home</a></li>
-        <li role="presentation" routerLinkActive="active"><a routerLink="/wip">Work In Progress</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" role="button">Settings <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a href="#">User</a></li>
-            <li><a href="#">System (admin only)</a></li>
-          </ul>
-        </li>        
-        <li role="presentation" routerLinkActive="active"><a routerLink="/details">Add New</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input class="form-control input-sm" type="text" placeholder="Search Cusip">
-        </div>
-        <button type="submit" class="btn btn-sm btn-default">Search</button>
-      </form>
+
     </div>
-  </nav>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
-
-<footer class="crc-footer">
+    
+<footer>
   <div class="container">
-    <p class="pull-right top-position">
+    <p class="pull-right">
         <a href="#">Top</a>
     </p>
     <p>&copy; 2017 Computer Resource Company
@@ -39,4 +47,4 @@
         <a href="#">Contact</a>
     </p>
   </div>
-</footer>
+</footer>    

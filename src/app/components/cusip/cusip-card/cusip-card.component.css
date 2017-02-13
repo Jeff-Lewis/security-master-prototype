@@ -24,22 +24,31 @@
 }
 
 span.icons {
-  padding: 0 5px 0 5px;
+  padding: 2px 5px 0 5px;
 }
+
 .card .card-action {
   /*margin-top: 3px;*/
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   padding: 1px;
-  background-color: #d9edf7;
+  background-color: #74acdf; /*#d9edf7;*/
 }
+
 .card .card-action a {
-  color: #ffab40;
+  color: #1B5C7D;   /*#ffab40; */
   margin-right: 16px;
   transition: color 0.3s ease;
   text-transform: uppercase;
 }
+
 .card .card-action a:hover {
-  color: #ffd8a6;
+  color: #FF473D;
   text-decoration: none;
   cursor: pointer;
+  font-weight: bold;
+}
+
+img {
+    height: 16px;
+    width: 20px;
 }
