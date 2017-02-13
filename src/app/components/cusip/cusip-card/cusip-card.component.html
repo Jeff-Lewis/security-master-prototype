@@ -1,4 +1,4 @@
-<section class="cusip-card-container">
+<!--<section class="cusip-card-container">
   <h5>
     <a (click)="showDetail()">{{cusip.name}}</a>
     <span>Muni</span>
@@ -6,4 +6,45 @@
   <h6>Trade Related | 
     <span>Added: {{getAddedDateString()}}</span>
   </h6>
-</section>
+</section>-->
+
+<div class="container">
+    <div class="row" style="width: 100%;">
+        spacer for design purposes
+    </div>
+    <div class="row">
+        <!-- Cards -->
+        <div class="col-md-2 col-md-offset-3">
+            <div class="card">
+                <div class="card-action">
+                    <!--<a (click)="showDetail()">{{cusip.name}}</a>-->
+                    <span style="font-size: medium; font-weight: bold; padding-left:5px;">123456XS8</span>
+                    <button type="button" class="close" aria-label="Close">
+                        <span style="vertical-align: top;" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="card-content">
+                    <div class="text-center">
+                        <span class="icons">ICON</span><span class="icons">ICON</span><span class="icons">ICON</span><span class="icons">ICON</span>
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td style="padding-left:5px;">Submitted:</td>
+                                <td id="timeSubmitted" style="padding-left:10px;">8:52</td>
+                                <!--<span id="timeSubmitted">{{getAddedDateString()}}</span>-->
+                            </tr>
+                            <tr>
+                                <td style="padding-left:5px;">Elapsed:</td>
+                                <td id="timeElapsed" style="padding-left:10px;">0:23</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>                
+                <div class="card-action">
+                    <h5 class="text-center"><a>Own it!</a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
