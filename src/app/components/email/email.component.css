@@ -10,3 +10,11 @@ img {
 label.contents {
     color: #00008b;
 }
+
+th {
+    background-color: #d9edf7;
+}
+
+.body-heading {
+    background-color: #d9edf7;
+}
