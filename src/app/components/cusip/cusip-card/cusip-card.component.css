@@ -25,10 +25,10 @@
   background-clip: padding-box;
   box-sizing: border-box;
 }
-
+/*
 span.icons {
-  padding: 2px 5px 0 5px;
-}
+  padding: 0 5px;
+}*/
 
 .card .card-action {
   /*margin-top: 3px;*/
@@ -54,4 +54,12 @@ span.icons {
 img {
     height: 16px;
     width: 20px;
+}
+
+img.trading {
+  margin-bottom: 2px;
+}
+
+i.glyphicon {
+  top: 3px;
 }
