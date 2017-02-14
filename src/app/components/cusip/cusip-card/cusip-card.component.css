@@ -2,11 +2,13 @@
   padding: 0px !important;
 }
 .card {
+  background-color: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .card {
   /*box-sizing: border-box;*/
+  border: 1px solid #74acdf;
   border-radius: 2px;
   /*background-clip: padding-box;*/
   padding: 4px;
