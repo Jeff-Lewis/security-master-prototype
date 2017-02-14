@@ -1,19 +1,17 @@
 nav {
     background-color: #d9edf7;;
     padding-left: 20%;
-    padding-right: 20%;
+    padding-right: 10%;
 }
 
-/*.page-header {
-    margin-bottom: 5px;
-}*/
+.navbar {
+    margin-bottom: 40px !important;
+}
 
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /*right: 20%; 
-    left: 20%;*/   
     height: 60px;
     color: #999;
     text-align: center;
@@ -23,7 +21,5 @@ footer {
 }
 
 .container {
-    /*width: auto;
-    max-width: 680px;*/
     padding: 0 15px;
 }
