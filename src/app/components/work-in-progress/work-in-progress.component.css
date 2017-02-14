@@ -71,3 +71,27 @@
     background: rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
+
+.panel-body-padding {
+    padding: 5px 0;
+}
+
+.container-padding {
+    /*margin-left: 0 !important;
+    margin-right: 0 !important;*/
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.override-padding { 
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+}
+
+#setting-up-margin {
+    left: 15px;
+}
+
+#complete-margin {
+    left: 30px;
+}

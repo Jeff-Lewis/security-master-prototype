@@ -1,18 +1,73 @@
 <div class="container">
-  <label>Add Cusip:</label> <input #newSetupRequest placeholder="Cusip"/>
-  <button (click)="addCusip(newSetupRequest.value); newSetupRequest.value=''">
-    Add
-  </button>
+  <div class="row" style="margin-bottom: 24px;">
+    <div class="col-md-4 col-md-offset-1">
+      <label>Add Cusip:</label> <input #newSetupRequest placeholder="Cusip"/>
+      <button (click)="addCusip(newSetupRequest.value); newSetupRequest.value=''">
+        Add
+      </button>
+    </div>
+  </div>
 </div>
 
-
-<div *ngIf="wip && wip.cusips">
-  <app-cusip-card 
-    *ngFor="let cusip of wip.cusips" 
-    [cusip]="cusip"
-    (onShowDetail)="showCusipDetail($event)">
-  </app-cusip-card>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><b>Ready for Setup</b></div>
+        <div class="panel-body fixed-panel panel-body-padding">
+          <div class="container container-padding">
+            <div class="row">    
+              <div *ngIf="wip && wip.cusips">
+                <app-cusip-card
+                  *ngFor="let cusip of wip.cusips" 
+                  [cusip]="cusip"
+                  (onShowDetail)="showCusipDetail($event)">
+                </app-cusip-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="setting-up-margin" class="col-md-3 overide-padding">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><b>Setting Up</b></div>
+        <div class="panel-body fixed-panel panel-body-padding">
+          <div class="container container-padding">
+            <div class="row">    
+              <div *ngIf="wip && wip.cusips">
+                <app-cusip-card
+                  *ngFor="let cusip of wip.cusips" 
+                  [cusip]="cusip"
+                  (onShowDetail)="showCusipDetail($event)">
+                </app-cusip-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="complete-margin" class="col-md-3 overide-padding">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><b>Setup Complete!</b></div>
+        <div class="panel-body fixed-panel panel-body-padding">
+          <div class="container container-padding">
+            <div class="row">    
+              <div *ngIf="wip && wip.cusips">
+                <app-cusip-card
+                  *ngFor="let cusip of wip.cusips" 
+                  [cusip]="cusip"
+                  (onShowDetail)="showCusipDetail($event)">
+                </app-cusip-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 <div *ngIf="selectedCusip">
   <div class="modal">

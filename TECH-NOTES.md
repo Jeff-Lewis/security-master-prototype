@@ -71,8 +71,14 @@
     * Discuss width with Jake
     * Discuss additional elements with Jake and Dropdown
     * Color? 
+    * When owned, hide footer for user (they only see there own)
+        * Show owner for admin
 ~~* Add Images to project *~~
-* TODO: ADD MORE TASKS (I want to go home!)
+
+* Timeline
+    * Remove or fix box-shadow, it looks muddy
+    * Shift to right
+    
 ### Research ########################################################
 *   [Make partials work](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html)
  
